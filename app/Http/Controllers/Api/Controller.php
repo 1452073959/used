@@ -15,7 +15,7 @@ class Controller extends BaseController
 
     public function __construct(Request $request)
     {
-      $this->middleware('used')->except('wechat');;
+//      $this->middleware('used')->except('wechat');;
         $use=User::where('token',request('token'))->first();
         $this->user=$use;
     }

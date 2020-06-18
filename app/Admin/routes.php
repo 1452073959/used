@@ -18,4 +18,6 @@ Route::group([
     $router->resource('cate', 'CateController');
     //商品后台路由
     $router->resource('product', 'ProductController');
+    //二维码
+    $router->resource('qrcode', 'QrcodeController');
 });

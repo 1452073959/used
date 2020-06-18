@@ -11,6 +11,8 @@ return [
         'price' => '价格',
         'tel' => '联系方式',
         'status'=>'状态',
+        'user_id'=>'用户昵称',
+        'pageview'=>'浏览量',
     ],
     'options' => [
     ],

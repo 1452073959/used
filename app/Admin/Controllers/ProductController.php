@@ -20,11 +20,13 @@ class ProductController extends AdminController
     {
         return Grid::make(new Product(), function (Grid $grid) {
             $grid->model()->with(['cate']);
+            $grid->model()->with(['user']);
             $grid->id->sortable();
 //            $grid->cid;
+            $grid->column('user.nickname','发布人');
             $grid->column('cate.text','分类');
             $grid->title;
-            $grid->description;
+//            $grid->description;
             $grid->image->display(function ($pictures) {
 
                 return json_decode($pictures, true);
@@ -33,8 +35,8 @@ class ProductController extends AdminController
             $grid->price;
             $grid->tel;
             $grid->status->using([ 1 => '上架',2=>'下架']);
-            $grid->created_at;
-            $grid->updated_at->sortable();
+//            $grid->created_at;
+//            $grid->updated_at->sortable();
             // 禁用详情按钮
             $grid->disableViewButton();
             $grid->filter(function (Grid\Filter $filter) {

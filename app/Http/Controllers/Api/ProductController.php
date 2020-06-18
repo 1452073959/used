@@ -21,7 +21,7 @@ class ProductController extends Controller
 
     public function test()
     {
-        $da=Product::with('cate')->get();
+        $da=Product::with('cate','user')->get();
          return $this->success($da);
     }
 
@@ -32,22 +32,21 @@ class ProductController extends Controller
             'content' => request('content'),
             'user_id' => $user['id'],
             'replytime' => date('Y-m-d', time()),
-//            'parent_id' => request('parent_id', null),
+            'parent_id' => request('parent_id', null),
         ]);
         return $product;
     }
 
-    public function show(Product $product)
+    public function show(Request $request)
     {
-
-
+        $comments = Comment::with('childrenCategories','user')->whereNull('parent_id')->where('pid',request('pid'))->get();
 
 //        $comments=Product::with('comments')->where('id',2)->orderBy('id','desc')->get();
 //        $product->
-        $product->load('comments.owner');
-        $comments = $product->getComments();
-        $comments['root'] = $comments[''];
-        unset($comments['']);
+//        $product->load('comments.owner');
+//        $comments = $product->getComments();
+//        $comments['root'] = $comments[''];
+//        unset($comments['']);
 //        $comments = Comment::with('owner','replies.owner')->where('parent_id', '0')->orderBy('id')->get();
         return $comments;
     }

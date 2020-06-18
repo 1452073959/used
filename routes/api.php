@@ -28,10 +28,12 @@ $api->version('v1', [
 
     //分类的接口
     $api->get('cate', 'ProductController@cate');
+    //评论内容
+    Route::get('show','Api\ProductController@show');
     //评论
-    Route::get('show/{product}','Api\ProductController@show');
-    //获取评论
     Route::get('comments/{product}','Api\ProductController@comments');
+    //二维码
+    $api->get('qrcode','QrcodeController@qrcode');
 //    Route::get('users/{Product}', function (\App\Models\Product $Product) {
 //        return $Product->title;
 //    });

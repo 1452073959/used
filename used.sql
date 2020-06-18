@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 127.0.0.1
-Source Server Version : 50724
-Source Host           : localhost:3306
+Source Server         : 本地
+Source Server Version : 50717
+Source Host           : 127.0.0.1:3306
 Source Database       : used
 
 Target Server Type    : MYSQL
-Target Server Version : 50724
+Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2020-06-18 19:43:21
+Date: 2020-06-19 01:20:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,7 +29,7 @@ CREATE TABLE `admin_menu` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_menu
@@ -43,6 +43,7 @@ INSERT INTO `admin_menu` VALUES ('6', '2', '6', 'Menu', '', 'auth/menu', '2020-0
 INSERT INTO `admin_menu` VALUES ('7', '2', '7', 'Operation log', '', 'auth/logs', '2020-06-18 03:43:13', null);
 INSERT INTO `admin_menu` VALUES ('8', '0', '8', '分类管理', 'fa-cube', 'cate', '2020-06-18 14:05:17', '2020-06-18 14:05:17');
 INSERT INTO `admin_menu` VALUES ('9', '0', '9', '商品管理', 'fa-balance-scale', 'product', '2020-06-18 14:22:58', '2020-06-18 14:22:58');
+INSERT INTO `admin_menu` VALUES ('10', '0', '10', '联系二维码', 'fa-google-wallet', 'qrcode', '2020-06-19 00:22:34', '2020-06-19 00:22:34');
 
 -- ----------------------------
 -- Table structure for admin_operation_log
@@ -59,7 +60,7 @@ CREATE TABLE `admin_operation_log` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `admin_operation_log_user_id_index` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=195 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_operation_log
@@ -221,6 +222,43 @@ INSERT INTO `admin_operation_log` VALUES ('154', '1', 'admin/product', 'POST', '
 INSERT INTO `admin_operation_log` VALUES ('155', '1', 'admin/product', 'POST', '127.0.0.1', '{\"cid\":\"2\",\"title\":\"\\u6d4b\\u8bd5\\u5546\\u54c1\\u4e8c\",\"description\":\"\\u6d4b\\u8bd5\\u63cf\\u8ff02\",\"image\":\"images\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\",\"file-image\":null,\"_file_\":null,\"file\":null,\"price\":\"0.01\",\"tel\":\"13257275375\",\"status\":\"1\",\"_token\":\"J50Sb3V0lpF20EcWfRaL7EeVarwAgkMYjIlgpfeS\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/product\"}', '2020-06-18 18:06:38', '2020-06-18 18:06:38');
 INSERT INTO `admin_operation_log` VALUES ('156', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-18 18:06:38', '2020-06-18 18:06:38');
 INSERT INTO `admin_operation_log` VALUES ('157', '1', 'admin/product', 'GET', '127.0.0.1', '[]', '2020-06-18 18:10:16', '2020-06-18 18:10:16');
+INSERT INTO `admin_operation_log` VALUES ('158', '0', 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2020-06-18 22:34:43', '2020-06-18 22:34:43');
+INSERT INTO `admin_operation_log` VALUES ('159', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"coicDqNYjEgTjqv53v0vAskT5LBDP5gs6fHXHjT9\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-06-18 22:35:17', '2020-06-18 22:35:17');
+INSERT INTO `admin_operation_log` VALUES ('160', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-06-18 22:35:18', '2020-06-18 22:35:18');
+INSERT INTO `admin_operation_log` VALUES ('161', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-18 22:35:24', '2020-06-18 22:35:24');
+INSERT INTO `admin_operation_log` VALUES ('162', '1', 'admin/product', 'GET', '127.0.0.1', '[]', '2020-06-19 00:01:07', '2020-06-19 00:01:07');
+INSERT INTO `admin_operation_log` VALUES ('163', '1', 'admin/product', 'GET', '127.0.0.1', '[]', '2020-06-19 00:01:29', '2020-06-19 00:01:29');
+INSERT INTO `admin_operation_log` VALUES ('164', '1', 'admin/product', 'GET', '127.0.0.1', '[]', '2020-06-19 00:11:18', '2020-06-19 00:11:18');
+INSERT INTO `admin_operation_log` VALUES ('165', '1', 'admin/product', 'GET', '127.0.0.1', '[]', '2020-06-19 00:11:35', '2020-06-19 00:11:35');
+INSERT INTO `admin_operation_log` VALUES ('166', '1', 'admin/product', 'GET', '127.0.0.1', '[]', '2020-06-19 00:13:19', '2020-06-19 00:13:19');
+INSERT INTO `admin_operation_log` VALUES ('167', '1', 'admin/product', 'GET', '127.0.0.1', '[]', '2020-06-19 00:13:46', '2020-06-19 00:13:46');
+INSERT INTO `admin_operation_log` VALUES ('168', '1', 'admin/product/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 00:14:02', '2020-06-19 00:14:02');
+INSERT INTO `admin_operation_log` VALUES ('169', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 00:14:10', '2020-06-19 00:14:10');
+INSERT INTO `admin_operation_log` VALUES ('170', '1', 'admin/helpers/extensions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 00:16:17', '2020-06-19 00:16:17');
+INSERT INTO `admin_operation_log` VALUES ('171', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 00:16:18', '2020-06-19 00:16:18');
+INSERT INTO `admin_operation_log` VALUES ('172', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2020-06-19 00:19:38', '2020-06-19 00:19:38');
+INSERT INTO `admin_operation_log` VALUES ('173', '1', 'admin/helpers/scaffold/table', 'POST', '127.0.0.1', '{\"db\":\"used\",\"tb\":\"qrcode\",\"_token\":\"8kJGLV83WaPxr1UQjkEmCBvr75mFjU5N62pD0fTn\"}', '2020-06-19 00:20:23', '2020-06-19 00:20:23');
+INSERT INTO `admin_operation_log` VALUES ('174', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '{\"singular\":\"qrcode\"}', '2020-06-19 00:20:23', '2020-06-19 00:20:23');
+INSERT INTO `admin_operation_log` VALUES ('175', '1', 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"qrcode\",\"exist-table\":\"used|qrcode\",\"model_name\":\"App\\\\Models\\\\Qrcode\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\QrcodeController\",\"create\":[\"model\",\"repository\",\"controller\",\"lang\"],\"fields\":[{\"name\":\"text\",\"translation\":\"\\/\\/\\u5185\\u5bb9\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":\"\\/\\/\\u5185\\u5bb9\"}],\"primary_key\":\"id\",\"_token\":\"8kJGLV83WaPxr1UQjkEmCBvr75mFjU5N62pD0fTn\"}', '2020-06-19 00:20:28', '2020-06-19 00:20:28');
+INSERT INTO `admin_operation_log` VALUES ('176', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2020-06-19 00:20:30', '2020-06-19 00:20:30');
+INSERT INTO `admin_operation_log` VALUES ('177', '1', 'admin/helpers/scaffold/table', 'POST', '127.0.0.1', '{\"db\":\"used\",\"tb\":\"qrcode\",\"_token\":\"8kJGLV83WaPxr1UQjkEmCBvr75mFjU5N62pD0fTn\"}', '2020-06-19 00:20:42', '2020-06-19 00:20:42');
+INSERT INTO `admin_operation_log` VALUES ('178', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '{\"singular\":\"qrcode\"}', '2020-06-19 00:20:43', '2020-06-19 00:20:43');
+INSERT INTO `admin_operation_log` VALUES ('179', '1', 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"qrcode\",\"exist-table\":\"used|qrcode\",\"model_name\":\"App\\\\Models\\\\Qrcode\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\QrcodeController\",\"create\":[\"migration\"],\"fields\":[{\"name\":\"text\",\"translation\":\"\\/\\/\\u5185\\u5bb9\",\"type\":\"text\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":\"\\/\\/\\u5185\\u5bb9\"}],\"primary_key\":\"id\",\"_token\":\"8kJGLV83WaPxr1UQjkEmCBvr75mFjU5N62pD0fTn\"}', '2020-06-19 00:20:47', '2020-06-19 00:20:47');
+INSERT INTO `admin_operation_log` VALUES ('180', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2020-06-19 00:20:47', '2020-06-19 00:20:47');
+INSERT INTO `admin_operation_log` VALUES ('181', '1', 'admin/helpers/extensions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 00:20:53', '2020-06-19 00:20:53');
+INSERT INTO `admin_operation_log` VALUES ('182', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 00:21:49', '2020-06-19 00:21:49');
+INSERT INTO `admin_operation_log` VALUES ('183', '1', 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":null,\"title\":\"\\u8054\\u7cfb\\u4e8c\\u7ef4\\u7801\",\"icon\":\"fa-google-wallet\",\"uri\":\"qrcode\",\"roles\":[null],\"permissions\":null,\"_token\":\"8kJGLV83WaPxr1UQjkEmCBvr75mFjU5N62pD0fTn\"}', '2020-06-19 00:22:33', '2020-06-19 00:22:33');
+INSERT INTO `admin_operation_log` VALUES ('184', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 00:22:34', '2020-06-19 00:22:34');
+INSERT INTO `admin_operation_log` VALUES ('185', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2020-06-19 00:22:36', '2020-06-19 00:22:36');
+INSERT INTO `admin_operation_log` VALUES ('186', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 00:22:38', '2020-06-19 00:22:38');
+INSERT INTO `admin_operation_log` VALUES ('187', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-19 00:23:40', '2020-06-19 00:23:40');
+INSERT INTO `admin_operation_log` VALUES ('188', '1', 'admin/qrcode/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 00:23:43', '2020-06-19 00:23:43');
+INSERT INTO `admin_operation_log` VALUES ('189', '1', 'admin/qrcode', 'POST', '127.0.0.1', '{\"description\":\"<p>\\u5165\\u5e93\\u91cf\\u89e3\\u7b54\\u662f\\u5947\\u5076\\u843d\\u843d\\u5927\\u65b9\\u76842\\u4e3e\\u62a5\\u7535\\u8bdd\\u7684<\\/p>\",\"_token\":\"8kJGLV83WaPxr1UQjkEmCBvr75mFjU5N62pD0fTn\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/qrcode\"}', '2020-06-19 00:23:57', '2020-06-19 00:23:57');
+INSERT INTO `admin_operation_log` VALUES ('190', '1', 'admin/qrcode', 'POST', '127.0.0.1', '{\"description\":\"<p>\\u5165\\u5e93\\u91cf\\u89e3\\u7b54\\u662f\\u5947\\u5076\\u843d\\u843d\\u5927\\u65b9\\u76842\\u4e3e\\u62a5\\u7535\\u8bdd\\u7684<\\/p>\",\"_token\":\"8kJGLV83WaPxr1UQjkEmCBvr75mFjU5N62pD0fTn\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/qrcode\"}', '2020-06-19 00:24:07', '2020-06-19 00:24:07');
+INSERT INTO `admin_operation_log` VALUES ('191', '1', 'admin/qrcode/create', 'GET', '127.0.0.1', '[]', '2020-06-19 00:28:39', '2020-06-19 00:28:39');
+INSERT INTO `admin_operation_log` VALUES ('192', '1', 'admin/qrcode', 'POST', '127.0.0.1', '{\"text\":\"<p>\\u5927\\u5927\\u58eb\\u5927\\u592b\\u5218<\\/p>\",\"_token\":\"8kJGLV83WaPxr1UQjkEmCBvr75mFjU5N62pD0fTn\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/qrcode\"}', '2020-06-19 00:28:47', '2020-06-19 00:28:47');
+INSERT INTO `admin_operation_log` VALUES ('193', '1', 'admin/qrcode', 'POST', '127.0.0.1', '{\"text\":\"<p>\\u5927\\u5927\\u58eb\\u5927\\u592b\\u5218<\\/p>\",\"_token\":\"8kJGLV83WaPxr1UQjkEmCBvr75mFjU5N62pD0fTn\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/qrcode\"}', '2020-06-19 00:29:07', '2020-06-19 00:29:07');
+INSERT INTO `admin_operation_log` VALUES ('194', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 00:29:08', '2020-06-19 00:29:08');
 
 -- ----------------------------
 -- Table structure for admin_permissions
@@ -393,11 +431,12 @@ CREATE TABLE `comment` (
 -- Records of comment
 -- ----------------------------
 INSERT INTO `comment` VALUES ('1', '1', '1', null, null, '评论1');
-INSERT INTO `comment` VALUES ('2', '1', '2', '0', null, '不错哟');
-INSERT INTO `comment` VALUES ('3', '1', '2', '2', null, '商品二的评论');
-INSERT INTO `comment` VALUES ('4', '1', '2', '2', null, '商品二的回复');
-INSERT INTO `comment` VALUES ('5', '1', '2', '3', '2020-06-18 00:00:00', '111');
-INSERT INTO `comment` VALUES ('6', '1', '2', '3', '2020-06-18 00:00:00', '11111111');
+INSERT INTO `comment` VALUES ('2', '1', '2', null, null, '不错哟一级评论');
+INSERT INTO `comment` VALUES ('3', '1', '2', '2', null, '二级评论');
+INSERT INTO `comment` VALUES ('4', '1', '2', '2', null, '二级评论2');
+INSERT INTO `comment` VALUES ('5', '1', '2', '3', '2020-06-18 00:00:00', '三级评论');
+INSERT INTO `comment` VALUES ('6', '1', '2', '4', '2020-06-18 00:00:00', '三级评论2');
+INSERT INTO `comment` VALUES ('7', '1', '2', null, null, '一级评论2');
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -457,13 +496,15 @@ CREATE TABLE `password_resets` (
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL COMMENT '用户id',
   `cid` int(11) NOT NULL COMMENT '分类id',
   `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '标题',
   `description` text COLLATE utf8mb4_unicode_ci COMMENT '描述',
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '图片',
   `price` decimal(10,2) DEFAULT NULL COMMENT '价格',
   `tel` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '联系方式',
-  `order` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '//层级',
+  `pageview` int(11) DEFAULT NULL,
+  `order` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '层级',
   `status` tinyint(5) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -475,8 +516,23 @@ CREATE TABLE `product` (
 -- ----------------------------
 -- Records of product
 -- ----------------------------
-INSERT INTO `product` VALUES ('1', '3', '电脑快捷键大全', '默认响应', '[\"images\\/787d6be44234aeea14fcabf4ad32914e.jpg\",\"images\\/45068a23a49a8d15bae97cf007c484e5.jpg\"]', '50.00', '15766925847', null, '1', '2020-06-18 15:07:03', '2020-06-18 15:11:20');
-INSERT INTO `product` VALUES ('2', '2', '测试商品二', '测试描述2', '[\"images\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\"]', '0.01', '13257275375', null, '1', '2020-06-18 18:06:38', '2020-06-18 18:06:38');
+INSERT INTO `product` VALUES ('1', '1', '3', '电脑快捷键大全', '默认响应', '[\"images\\/787d6be44234aeea14fcabf4ad32914e.jpg\",\"images\\/45068a23a49a8d15bae97cf007c484e5.jpg\"]', '50.00', '15766925847', null, null, '1', '2020-06-18 15:07:03', '2020-06-18 15:11:20');
+INSERT INTO `product` VALUES ('2', '1', '2', '测试商品二', '测试描述2', '[\"images\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\"]', '0.01', '13257275375', null, null, '1', '2020-06-18 18:06:38', '2020-06-18 18:06:38');
+
+-- ----------------------------
+-- Table structure for qrcode
+-- ----------------------------
+DROP TABLE IF EXISTS `qrcode`;
+CREATE TABLE `qrcode` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `text` text COLLATE utf8mb4_unicode_ci COMMENT '//内容',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of qrcode
+-- ----------------------------
+INSERT INTO `qrcode` VALUES ('1', '<p>大大士大夫刘</p>');
 
 -- ----------------------------
 -- Table structure for users
