@@ -20,4 +20,6 @@ Route::group([
     $router->resource('product', 'ProductController');
     //二维码
     $router->resource('qrcode', 'QrcodeController');
+    //置顶位管理
+    $router->resource('stick', 'StickController');
 });

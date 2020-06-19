@@ -4,6 +4,7 @@ namespace App\Models;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Comment extends Model
 {
@@ -35,6 +36,18 @@ class Comment extends Model
 
     public function childrenCategories()
     {
-        return $this->hasMany(Comment::class,'parent_id','id')->with('categories','user');
+        return $this->categories()->with('childrenCategories','user');
+    }
+
+
+    protected static function boot()
+    {
+        parent::boot();
+        // 监听模型创建事件，在写入数据库之前触发
+        static::created(function (Comment $comment) {
+           $num= DB::table('comment')->where('pid',$comment['pid'])->count();
+          DB::table('product')->where('id',$comment['pid'])->update(['commentnumber'=>$num]);
+        });
+
     }
 }
