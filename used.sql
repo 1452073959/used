@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 本地
-Source Server Version : 50717
-Source Host           : 127.0.0.1:3306
+Source Server         : 127.0.0.1
+Source Server Version : 50724
+Source Host           : localhost:3306
 Source Database       : used
 
 Target Server Type    : MYSQL
-Target Server Version : 50717
+Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2020-06-19 01:20:16
+Date: 2020-06-19 20:00:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,7 +29,7 @@ CREATE TABLE `admin_menu` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_menu
@@ -44,6 +44,7 @@ INSERT INTO `admin_menu` VALUES ('7', '2', '7', 'Operation log', '', 'auth/logs'
 INSERT INTO `admin_menu` VALUES ('8', '0', '8', '分类管理', 'fa-cube', 'cate', '2020-06-18 14:05:17', '2020-06-18 14:05:17');
 INSERT INTO `admin_menu` VALUES ('9', '0', '9', '商品管理', 'fa-balance-scale', 'product', '2020-06-18 14:22:58', '2020-06-18 14:22:58');
 INSERT INTO `admin_menu` VALUES ('10', '0', '10', '联系二维码', 'fa-google-wallet', 'qrcode', '2020-06-19 00:22:34', '2020-06-19 00:22:34');
+INSERT INTO `admin_menu` VALUES ('11', '0', '11', '置顶位管理', 'fa-archive', 'stick', '2020-06-19 16:17:19', '2020-06-19 16:17:19');
 
 -- ----------------------------
 -- Table structure for admin_operation_log
@@ -60,7 +61,7 @@ CREATE TABLE `admin_operation_log` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `admin_operation_log_user_id_index` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=195 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=254 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_operation_log
@@ -259,6 +260,65 @@ INSERT INTO `admin_operation_log` VALUES ('191', '1', 'admin/qrcode/create', 'GE
 INSERT INTO `admin_operation_log` VALUES ('192', '1', 'admin/qrcode', 'POST', '127.0.0.1', '{\"text\":\"<p>\\u5927\\u5927\\u58eb\\u5927\\u592b\\u5218<\\/p>\",\"_token\":\"8kJGLV83WaPxr1UQjkEmCBvr75mFjU5N62pD0fTn\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/qrcode\"}', '2020-06-19 00:28:47', '2020-06-19 00:28:47');
 INSERT INTO `admin_operation_log` VALUES ('193', '1', 'admin/qrcode', 'POST', '127.0.0.1', '{\"text\":\"<p>\\u5927\\u5927\\u58eb\\u5927\\u592b\\u5218<\\/p>\",\"_token\":\"8kJGLV83WaPxr1UQjkEmCBvr75mFjU5N62pD0fTn\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/qrcode\"}', '2020-06-19 00:29:07', '2020-06-19 00:29:07');
 INSERT INTO `admin_operation_log` VALUES ('194', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 00:29:08', '2020-06-19 00:29:08');
+INSERT INTO `admin_operation_log` VALUES ('195', '0', 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2020-06-19 11:19:16', '2020-06-19 11:19:16');
+INSERT INTO `admin_operation_log` VALUES ('196', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"G7YyJKkXAQNgDayURJpdLoXfFcopxUsnW5VZpbyq\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-06-19 11:19:19', '2020-06-19 11:19:19');
+INSERT INTO `admin_operation_log` VALUES ('197', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-06-19 11:19:20', '2020-06-19 11:19:20');
+INSERT INTO `admin_operation_log` VALUES ('198', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 11:19:23', '2020-06-19 11:19:23');
+INSERT INTO `admin_operation_log` VALUES ('199', '1', 'admin/qrcode/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 11:19:27', '2020-06-19 11:19:27');
+INSERT INTO `admin_operation_log` VALUES ('200', '1', 'admin/qrcode/1', 'PUT', '127.0.0.1', '{\"text\":\"<p>\\u5927\\u5927\\u58eb\\u5927\\u592b\\u5218<\\/p><h2 class=\\\"shelf-title\\\" style=\\\"box-sizing: border-box; margin: 0px; font-weight: 400; font-size: 30px; color: rgba(27, 31, 35, 0.85); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; text-align: center; background-color: rgb(254, 254, 254);\\\">Learn Git and GitHub without any code!<\\/h2><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; text-align: center; background-color: rgb(254, 254, 254);\\\">Using the Hello World guide, you\\u2019ll start a branch, write comments, and open a pull request.<\\/p>\",\"_token\":\"ycybHFpiLw6bRsErMmJS3vOeEN1dW2QOGROMvD0H\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/qrcode\"}', '2020-06-19 11:20:16', '2020-06-19 11:20:16');
+INSERT INTO `admin_operation_log` VALUES ('201', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 11:20:17', '2020-06-19 11:20:17');
+INSERT INTO `admin_operation_log` VALUES ('202', '0', 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2020-06-19 13:39:18', '2020-06-19 13:39:18');
+INSERT INTO `admin_operation_log` VALUES ('203', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"w0LS3v7LGGtd2Zt7tKm76A5ZKoTt9WQ92KrUqC6x\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-06-19 14:47:34', '2020-06-19 14:47:34');
+INSERT INTO `admin_operation_log` VALUES ('204', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-06-19 14:47:34', '2020-06-19 14:47:34');
+INSERT INTO `admin_operation_log` VALUES ('205', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-06-19 14:47:37', '2020-06-19 14:47:37');
+INSERT INTO `admin_operation_log` VALUES ('206', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 14:47:40', '2020-06-19 14:47:40');
+INSERT INTO `admin_operation_log` VALUES ('207', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-06-19 14:52:52', '2020-06-19 14:52:52');
+INSERT INTO `admin_operation_log` VALUES ('208', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-06-19 14:52:57', '2020-06-19 14:52:57');
+INSERT INTO `admin_operation_log` VALUES ('209', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-06-19 14:56:30', '2020-06-19 14:56:30');
+INSERT INTO `admin_operation_log` VALUES ('210', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-06-19 15:02:40', '2020-06-19 15:02:40');
+INSERT INTO `admin_operation_log` VALUES ('211', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-06-19 15:05:42', '2020-06-19 15:05:42');
+INSERT INTO `admin_operation_log` VALUES ('212', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 15:34:17', '2020-06-19 15:34:17');
+INSERT INTO `admin_operation_log` VALUES ('213', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:14:42', '2020-06-19 16:14:42');
+INSERT INTO `admin_operation_log` VALUES ('214', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:14:47', '2020-06-19 16:14:47');
+INSERT INTO `admin_operation_log` VALUES ('215', '1', 'admin/helpers/scaffold/table', 'POST', '127.0.0.1', '{\"db\":\"used\",\"tb\":\"stick\",\"_token\":\"K31HW2mEgAeaIGebeEltVX0xWtce9KAw27GSA1yC\"}', '2020-06-19 16:14:54', '2020-06-19 16:14:54');
+INSERT INTO `admin_operation_log` VALUES ('216', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '{\"singular\":\"stick\"}', '2020-06-19 16:14:54', '2020-06-19 16:14:54');
+INSERT INTO `admin_operation_log` VALUES ('217', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2020-06-19 16:15:09', '2020-06-19 16:15:09');
+INSERT INTO `admin_operation_log` VALUES ('218', '1', 'admin/helpers/scaffold/table', 'POST', '127.0.0.1', '{\"db\":\"used\",\"tb\":\"stick\",\"_token\":\"K31HW2mEgAeaIGebeEltVX0xWtce9KAw27GSA1yC\"}', '2020-06-19 16:15:16', '2020-06-19 16:15:16');
+INSERT INTO `admin_operation_log` VALUES ('219', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '{\"singular\":\"stick\"}', '2020-06-19 16:15:17', '2020-06-19 16:15:17');
+INSERT INTO `admin_operation_log` VALUES ('220', '1', 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"stick\",\"exist-table\":\"used|stick\",\"model_name\":\"App\\\\Models\\\\Stick\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\StickController\",\"create\":[\"model\",\"repository\",\"controller\",\"lang\"],\"fields\":[{\"name\":\"title\",\"translation\":\"\\u6807\\u9898\",\"type\":\"string\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":\"\\u6807\\u9898\"},{\"name\":\"status\",\"translation\":\"\\u662f\\u5426\\u53ef\\u7528\",\"type\":\"tinyInteger\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":\"\\u662f\\u5426\\u53ef\\u7528\"},{\"name\":\"price\",\"translation\":\"\\u4ef7\\u683c\",\"type\":\"decimal\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":\"\\u4ef7\\u683c\"}],\"primary_key\":\"id\",\"_token\":\"K31HW2mEgAeaIGebeEltVX0xWtce9KAw27GSA1yC\"}', '2020-06-19 16:15:21', '2020-06-19 16:15:21');
+INSERT INTO `admin_operation_log` VALUES ('221', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2020-06-19 16:15:24', '2020-06-19 16:15:24');
+INSERT INTO `admin_operation_log` VALUES ('222', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:15:30', '2020-06-19 16:15:30');
+INSERT INTO `admin_operation_log` VALUES ('223', '1', 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":null,\"title\":\"\\u7f6e\\u9876\\u4f4d\\u7ba1\\u7406\",\"icon\":\"fa-archive\",\"uri\":\"stick\",\"roles\":[null],\"permissions\":null,\"_token\":\"K31HW2mEgAeaIGebeEltVX0xWtce9KAw27GSA1yC\"}', '2020-06-19 16:17:19', '2020-06-19 16:17:19');
+INSERT INTO `admin_operation_log` VALUES ('224', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:17:19', '2020-06-19 16:17:19');
+INSERT INTO `admin_operation_log` VALUES ('225', '1', 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2020-06-19 16:17:21', '2020-06-19 16:17:21');
+INSERT INTO `admin_operation_log` VALUES ('226', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:17:23', '2020-06-19 16:17:23');
+INSERT INTO `admin_operation_log` VALUES ('227', '1', 'admin/stick/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:17:31', '2020-06-19 16:17:31');
+INSERT INTO `admin_operation_log` VALUES ('228', '1', 'admin/product', 'GET', '127.0.0.1', '[]', '2020-06-19 16:17:47', '2020-06-19 16:17:47');
+INSERT INTO `admin_operation_log` VALUES ('229', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:17:50', '2020-06-19 16:17:50');
+INSERT INTO `admin_operation_log` VALUES ('230', '1', 'admin/stick/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:17:51', '2020-06-19 16:17:51');
+INSERT INTO `admin_operation_log` VALUES ('231', '1', 'admin/stick', 'POST', '127.0.0.1', '{\"title\":\"\\u6211\\u8981\\u7f6e\\u9876\\u4e00\",\"status\":\"1\",\"price\":\"50\",\"_token\":\"K31HW2mEgAeaIGebeEltVX0xWtce9KAw27GSA1yC\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/stick\"}', '2020-06-19 16:18:06', '2020-06-19 16:18:06');
+INSERT INTO `admin_operation_log` VALUES ('232', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:18:07', '2020-06-19 16:18:07');
+INSERT INTO `admin_operation_log` VALUES ('233', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-19 16:18:47', '2020-06-19 16:18:47');
+INSERT INTO `admin_operation_log` VALUES ('234', '1', 'admin/stick/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:18:49', '2020-06-19 16:18:49');
+INSERT INTO `admin_operation_log` VALUES ('235', '1', 'admin/stick', 'POST', '127.0.0.1', '{\"title\":\"\\u6211\\u8981\\u7f6e\\u9876\\u4e8c\",\"price\":\"2\",\"status\":\"1\",\"_token\":\"K31HW2mEgAeaIGebeEltVX0xWtce9KAw27GSA1yC\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/stick\"}', '2020-06-19 16:19:02', '2020-06-19 16:19:02');
+INSERT INTO `admin_operation_log` VALUES ('236', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:19:03', '2020-06-19 16:19:03');
+INSERT INTO `admin_operation_log` VALUES ('237', '1', 'admin/stick/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:19:06', '2020-06-19 16:19:06');
+INSERT INTO `admin_operation_log` VALUES ('238', '1', 'admin/stick', 'POST', '127.0.0.1', '{\"title\":\"\\u6211\\u8981\\u7f6e\\u9876\\u4e09\",\"price\":\"3\",\"status\":\"1\",\"_token\":\"K31HW2mEgAeaIGebeEltVX0xWtce9KAw27GSA1yC\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/stick\"}', '2020-06-19 16:19:16', '2020-06-19 16:19:16');
+INSERT INTO `admin_operation_log` VALUES ('239', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:19:16', '2020-06-19 16:19:16');
+INSERT INTO `admin_operation_log` VALUES ('240', '1', 'admin/stick/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:19:18', '2020-06-19 16:19:18');
+INSERT INTO `admin_operation_log` VALUES ('241', '1', 'admin/stick', 'POST', '127.0.0.1', '{\"title\":\"\\u6211\\u8981\\u7f6e\\u9876\\u56db\",\"price\":\"4\",\"status\":\"1\",\"_token\":\"K31HW2mEgAeaIGebeEltVX0xWtce9KAw27GSA1yC\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/stick\"}', '2020-06-19 16:19:28', '2020-06-19 16:19:28');
+INSERT INTO `admin_operation_log` VALUES ('242', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:19:29', '2020-06-19 16:19:29');
+INSERT INTO `admin_operation_log` VALUES ('243', '1', 'admin/stick/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:19:31', '2020-06-19 16:19:31');
+INSERT INTO `admin_operation_log` VALUES ('244', '1', 'admin/stick', 'POST', '127.0.0.1', '{\"title\":\"\\u6211\\u8981\\u7f6e\\u9876\\u4e94\",\"price\":\"5\",\"status\":\"1\",\"_token\":\"K31HW2mEgAeaIGebeEltVX0xWtce9KAw27GSA1yC\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/stick\"}', '2020-06-19 16:19:42', '2020-06-19 16:19:42');
+INSERT INTO `admin_operation_log` VALUES ('245', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:19:42', '2020-06-19 16:19:42');
+INSERT INTO `admin_operation_log` VALUES ('246', '1', 'admin/stick/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:19:43', '2020-06-19 16:19:43');
+INSERT INTO `admin_operation_log` VALUES ('247', '1', 'admin/stick', 'POST', '127.0.0.1', '{\"title\":\"\\u6211\\u8981\\u7f6e\\u9876\\u516d\",\"price\":\"6\",\"status\":\"1\",\"_token\":\"K31HW2mEgAeaIGebeEltVX0xWtce9KAw27GSA1yC\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/stick\"}', '2020-06-19 16:20:02', '2020-06-19 16:20:02');
+INSERT INTO `admin_operation_log` VALUES ('248', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:20:02', '2020-06-19 16:20:02');
+INSERT INTO `admin_operation_log` VALUES ('249', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-19 16:20:29', '2020-06-19 16:20:29');
+INSERT INTO `admin_operation_log` VALUES ('250', '1', 'admin/stick/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:20:30', '2020-06-19 16:20:30');
+INSERT INTO `admin_operation_log` VALUES ('251', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:20:33', '2020-06-19 16:20:33');
+INSERT INTO `admin_operation_log` VALUES ('252', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-19 16:21:04', '2020-06-19 16:21:04');
+INSERT INTO `admin_operation_log` VALUES ('253', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-19 17:07:38', '2020-06-19 17:07:38');
 
 -- ----------------------------
 -- Table structure for admin_permissions
@@ -425,7 +485,7 @@ CREATE TABLE `comment` (
   `replytime` datetime DEFAULT NULL COMMENT '//评论时间',
   `content` text COLLATE utf8mb4_unicode_ci COMMENT '//评论内容',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of comment
@@ -436,7 +496,10 @@ INSERT INTO `comment` VALUES ('3', '1', '2', '2', null, '二级评论');
 INSERT INTO `comment` VALUES ('4', '1', '2', '2', null, '二级评论2');
 INSERT INTO `comment` VALUES ('5', '1', '2', '3', '2020-06-18 00:00:00', '三级评论');
 INSERT INTO `comment` VALUES ('6', '1', '2', '4', '2020-06-18 00:00:00', '三级评论2');
-INSERT INTO `comment` VALUES ('7', '1', '2', null, null, '一级评论2');
+INSERT INTO `comment` VALUES ('7', '1', '2', '5', null, '一级评论2');
+INSERT INTO `comment` VALUES ('28', '1', '1', null, '2020-06-19 00:00:00', null);
+INSERT INTO `comment` VALUES ('29', '1', '1', null, '2020-06-19 00:00:00', null);
+INSERT INTO `comment` VALUES ('30', '1', '1', null, '2020-06-19 00:00:00', null);
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -503,11 +566,13 @@ CREATE TABLE `product` (
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '图片',
   `price` decimal(10,2) DEFAULT NULL COMMENT '价格',
   `tel` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '联系方式',
-  `pageview` int(11) DEFAULT NULL,
+  `commentnumber` int(11) NOT NULL DEFAULT '0',
+  `pageview` int(11) NOT NULL DEFAULT '0',
   `order` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '层级',
-  `status` tinyint(5) DEFAULT NULL,
+  `status` tinyint(5) NOT NULL DEFAULT '1',
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `sticktime` timestamp NULL DEFAULT NULL COMMENT '置顶时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `cid` (`cid`)
@@ -516,8 +581,8 @@ CREATE TABLE `product` (
 -- ----------------------------
 -- Records of product
 -- ----------------------------
-INSERT INTO `product` VALUES ('1', '1', '3', '电脑快捷键大全', '默认响应', '[\"images\\/787d6be44234aeea14fcabf4ad32914e.jpg\",\"images\\/45068a23a49a8d15bae97cf007c484e5.jpg\"]', '50.00', '15766925847', null, null, '1', '2020-06-18 15:07:03', '2020-06-18 15:11:20');
-INSERT INTO `product` VALUES ('2', '1', '2', '测试商品二', '测试描述2', '[\"images\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\"]', '0.01', '13257275375', null, null, '1', '2020-06-18 18:06:38', '2020-06-18 18:06:38');
+INSERT INTO `product` VALUES ('1', '1', '2', 'cd111', '测试描述2', '[\"images\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\"]', '0.01', '13257275375', '4', '12', '1', '1', '2020-06-18 18:06:38', '2020-06-19 17:31:36', null);
+INSERT INTO `product` VALUES ('2', '1', '2', '测试商品二', '测试描述2', '[\"images\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\"]', '0.01', '13257275375', '0', '0', '2', '1', '2020-07-10 19:46:00', '2020-06-18 18:06:38', null);
 
 -- ----------------------------
 -- Table structure for qrcode
@@ -532,7 +597,30 @@ CREATE TABLE `qrcode` (
 -- ----------------------------
 -- Records of qrcode
 -- ----------------------------
-INSERT INTO `qrcode` VALUES ('1', '<p>大大士大夫刘</p>');
+INSERT INTO `qrcode` VALUES ('1', '<p>大大士大夫刘</p><h2 class=\"shelf-title\" style=\"box-sizing: border-box; margin: 0px; font-weight: 400; font-size: 30px; color: rgba(27, 31, 35, 0.85); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; text-align: center; background-color: rgb(254, 254, 254);\">Learn Git and GitHub without any code!</h2><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; text-align: center; background-color: rgb(254, 254, 254);\">Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.</p>');
+
+-- ----------------------------
+-- Table structure for stick
+-- ----------------------------
+DROP TABLE IF EXISTS `stick`;
+CREATE TABLE `stick` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '标题',
+  `status` tinyint(10) DEFAULT NULL COMMENT '是否可用',
+  `price` decimal(10,2) DEFAULT NULL COMMENT '价格',
+  `pid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of stick
+-- ----------------------------
+INSERT INTO `stick` VALUES ('1', '我要置顶一', '2', '50.00', '1');
+INSERT INTO `stick` VALUES ('2', '我要置顶二', '1', '2.00', null);
+INSERT INTO `stick` VALUES ('3', '我要置顶三', '1', '3.00', null);
+INSERT INTO `stick` VALUES ('4', '我要置顶四', '1', '4.00', null);
+INSERT INTO `stick` VALUES ('5', '我要置顶五', '1', '5.00', null);
+INSERT INTO `stick` VALUES ('6', '我要置顶六', '1', '6.00', null);
 
 -- ----------------------------
 -- Table structure for users
@@ -543,7 +631,7 @@ CREATE TABLE `users` (
   `nickname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '昵称',
   `weapp_avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '头像',
   `birthday` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '生日',
-  `sex` int(11) DEFAULT NULL COMMENT '性别',
+  `sex` char(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '性别',
   `school` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '学校',
   `weapp_openid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '微信id',
   `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -556,4 +644,4 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'snow雪', 'https://wx.qlogo.cn/mmopen/vi_32/fvSzic2fdNUMgDEXQMSMy4qUHQCCCcyPhyZCaKibRcGFckNYyqicx2mfJiagqjKV0USu8icX9fnibDE9wqb4aMazNseA/132', null, null, null, 'oUf9a5AT4xPDZy8lJ5Fpskh5gTqE', 'eyJpdiI6Ikg3XC9kdjFkMmlLZzE2TU9ScnIzbWp3PT0iLCJ2YWx1ZSI6IjVMN21HWWJOMjFCaWVzYUtnQTN2c0hTeXlDeFUyMkRlM3F2OFczOTFCVnBnelRvcHMzZmNTOGJLdkNyQkM3eWMiLCJtYWMiOiJhZDNkMTZiNTY4ODY5Y2RlNTY5OTI2ZDVlMGNmM2JiOTg4Y2ViODlmOTJmYzFiM2RlMDYwNTk4YjcyYTcxYWI4In0=', '2020-06-18 17:27:23', '2020-06-18 18:17:39');
+INSERT INTO `users` VALUES ('1', 'snow雪', 'https://wx.qlogo.cn/mmopen/vi_32/fvSzic2fdNUMgDEXQMSMy4qUHQCCCcyPhyZCaKibRcGFckNYyqicx2mfJiagqjKV0USu8icX9fnibDE9wqb4aMazNseA/132', null, '女', '123456777', 'oUf9a5AT4xPDZy8lJ5Fpskh5gTqE', 'eyJpdiI6IlgyZUErdnFGcDJQUDJ0UElcL0RcLzkwUT09IiwidmFsdWUiOiJ0Y0JLVE15SnZobndlYmxKWWpHdGROV29OQXllSUNYN25CdDhnaUFzV0VrbEdNN0t3UDU0eG9ia3dBajNtYnFsIiwibWFjIjoiNWVjMTJhYmNkZTU4ZTc0ZjIxMTNlYWFkOWYyYTI3YTlhZjQwOGQ3YzZhNDM3NTU0ZGZiZjEwNmE4Njc1ZTdkYiJ9', '2020-06-18 17:27:23', '2020-06-19 19:58:27');
