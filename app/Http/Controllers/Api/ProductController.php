@@ -26,9 +26,9 @@ class ProductController extends Controller
          return $this->success($da);
     }
 //评论
-    public function comments(Product $product)
+    public function comments(Product $product,Request $request)
     {
-        $user=$this->user;
+        $user=$request->user() ;
         $product->comments()->create([
             'content' => request('content'),
             'user_id' => $user['id'],
@@ -45,11 +45,11 @@ class ProductController extends Controller
         return $comments;
     }
     //我发布的
-    public function myrelease()
+    public function myrelease(Request $request)
     {
-        $user=$this->user;
-//       return  Product::where('user_id',$user['id'])->get();
-       $res=  Product::where('user_id',1)->get();
+        $user=$request->user() ;
+        $res=  Product::where('user_id',$user['id'])->get();
+//       $res=  Product::where('user_id',1)->get();
         return  $this->success($res);
     }
 
@@ -62,7 +62,6 @@ class ProductController extends Controller
     //修改
     public function myreleaseupdate(Request $request,Product $product)
     {
-
        $res= $product->update($request->all());
         return $this->success($product);
     }
@@ -75,7 +74,7 @@ class ProductController extends Controller
     //商品上传
     public function productadd(Product $product,Request $request)
     {
-        $user=$this->user;
+        $user=$request->user() ;
         $data=$request->all();
         if ($request->hasFile('image')) {
             $file=$request->image;
@@ -101,6 +100,7 @@ class ProductController extends Controller
     //商品列表
     public function  productlist()
     {
+
         $data=Product::with('user')->orderBy('order','desc')->get();
         foreach ($data as $k=>$v)
         {
@@ -112,7 +112,6 @@ class ProductController extends Controller
     public function productshow()
     {
         $product=Product::find(request('id'));
-        $
         $product->pageview++;
         $product->save();
         return $this->success($product);

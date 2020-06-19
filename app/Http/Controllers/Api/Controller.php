@@ -7,18 +7,26 @@ use Dingo\Api\Routing\Helpers;
 use Response;
 use App\Http\Controllers\Controller as BaseController;
 use App\Models\User;
-use App\Http\Middleware\Used;
+use App\Http\Middleware\RefreshToken;
+use Auth;
 class Controller extends BaseController
 {
     use Helpers;
     public $user=[];
-
     public function __construct(Request $request)
     {
-//      $this->middleware('used')->except('wechat');;
-        $use=User::where('token',request('token'))->first();
-        $this->user=$use;
+      $this->middleware('refresh')->except('wechat');;
     }
+
+    public function respondWithToken($token)
+    {
+        return response()->json([
+            'access_token' => $token,
+            'token_type' => 'Bearer',
+            'expires_in' => auth('api')->factory()->getTTL() * 60
+        ]);
+    }
+
 
     /**
      * @var int

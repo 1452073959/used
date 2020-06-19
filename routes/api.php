@@ -20,7 +20,8 @@ $api->version('v1', [
 ], function ($api) {
     // 登录
     $api->post('logincode', 'WechatController@wechat');
-
+    //刷新token
+    $api->get('token', 'WechatController@tokenupdate');
     $api->get('test', 'ProductController@test');
     //分类的接口
     $api->get('cate', 'ProductController@cate');
@@ -40,9 +41,9 @@ $api->version('v1', [
     Route::get('myreleasedel/{product?}','Api\ProductController@del');
 
     //用户
-    Route::get('user/{user?}','Api\UserController@show');
+    Route::get('user','Api\UserController@show');
     //更新用户
-    Route::any('updateuser/{user?}','Api\UserController@updateuser');
+    Route::post('updateuser','Api\UserController@updateuser');
     //商品上传
     Route::any('productadd','Api\ProductController@productadd');
     //商品列表

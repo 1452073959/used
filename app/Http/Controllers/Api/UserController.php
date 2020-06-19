@@ -9,13 +9,16 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     //获取用户信息
-    public function show(User $user)
+    public function show(Request $request)
     {
+        $user=$request->user() ;
         return $this->success($user);
     }
     //修改用户信息
-    public function updateuser(User $user,Request $request)
+    public function updateuser(Request $request)
     {
+        $user=$request->user();
+
         $res= $user->update($request->all());
         return $this->success($user);
     }

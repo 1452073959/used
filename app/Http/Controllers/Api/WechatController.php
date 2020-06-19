@@ -12,7 +12,7 @@ use App\Models\User;
 
 class WechatController extends Controller
 {
-    //
+    //登陆
 
     public function wechat(Request $request)
     {
@@ -43,28 +43,17 @@ class WechatController extends Controller
             $user->weapp_avatar=$data['userInfo']['avatarUrl'];
             $user->save();
         }
-        return $this->success(['openid'=>$weappOpenid,'token'=>$user['token']]);
+        $token= auth('api')->login($user);
+        return $this->respondWithToken($token);
+//        return $this->success(['openid'=>$weappOpenid,'token'=>$user['token']]);
     }
 
-
-    //
-    public function image()
+    //刷新token
+    public function tokenupdate()
     {
-        $data=Swipe::all();
-        $data2=[];
-        foreach ($data as $k=>$v)
-        {
-            $data2=json_decode($v['img'],true);
-        }
-
-        foreach ($data2 as $k=>$v)
-        {
-            $data3[]=config('app.url') . 'uploads/' .$v;
-        }
-
-        return $this->success($data3);
+        $token = auth('api')->refresh();
+        return $this->respondWithToken($token);
     }
-
 
     public function cache()
     {
