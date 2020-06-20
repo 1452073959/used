@@ -28,7 +28,10 @@ class ProductController extends Controller
 //评论
     public function comments(Product $product,Request $request)
     {
-        $user=$request->user() ;
+        if(!request('content')){
+            return  $this->failed('评论不能为空');
+        }
+        $user = auth('api')->user();
         $product->comments()->create([
             'content' => request('content'),
             'user_id' => $user['id'],
@@ -41,13 +44,16 @@ class ProductController extends Controller
     //评论显示
     public function show(Request $request)
     {
+        if(!request('pid')){
+            return  $this->failed('商品id不能为空');
+        }
         $comments = Comment::with('childrenCategories','user')->whereNull('parent_id')->where('pid',request('pid'))->get();
         return $comments;
     }
     //我发布的
     public function myrelease(Request $request)
     {
-        $user=$request->user() ;
+        $user = auth('api')->user();
         $res=  Product::where('user_id',$user['id'])->get();
 //       $res=  Product::where('user_id',1)->get();
         return  $this->success($res);
@@ -74,7 +80,7 @@ class ProductController extends Controller
     //商品上传
     public function productadd(Product $product,Request $request)
     {
-        $user=$request->user() ;
+        $user = auth('api')->user();
         $data=$request->all();
         if ($request->hasFile('image')) {
             $file=$request->image;
