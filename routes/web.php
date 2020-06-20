@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 Route::get('/qr', 'api\QrcodeController@qr');
-//Route::redirect('/', '/admin', 301);
+Route::redirect('/', '/admin', 301);

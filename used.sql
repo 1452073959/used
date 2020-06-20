@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2020-06-19 20:00:56
+Date: 2020-06-20 15:22:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -61,7 +61,7 @@ CREATE TABLE `admin_operation_log` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `admin_operation_log_user_id_index` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=254 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=373 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of admin_operation_log
@@ -319,6 +319,125 @@ INSERT INTO `admin_operation_log` VALUES ('250', '1', 'admin/stick/create', 'GET
 INSERT INTO `admin_operation_log` VALUES ('251', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-19 16:20:33', '2020-06-19 16:20:33');
 INSERT INTO `admin_operation_log` VALUES ('252', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-19 16:21:04', '2020-06-19 16:21:04');
 INSERT INTO `admin_operation_log` VALUES ('253', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-19 17:07:38', '2020-06-19 17:07:38');
+INSERT INTO `admin_operation_log` VALUES ('254', '0', 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2020-06-20 09:59:43', '2020-06-20 09:59:43');
+INSERT INTO `admin_operation_log` VALUES ('255', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"w8VqEdcX754eG8isRncoDjwF2yGKSQ9QtOOF6K6e\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-06-20 09:59:51', '2020-06-20 09:59:51');
+INSERT INTO `admin_operation_log` VALUES ('256', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-06-20 09:59:52', '2020-06-20 09:59:52');
+INSERT INTO `admin_operation_log` VALUES ('257', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:00:03', '2020-06-20 10:00:03');
+INSERT INTO `admin_operation_log` VALUES ('258', '1', 'admin/helpers/scaffold/table', 'POST', '127.0.0.1', '{\"db\":\"used\",\"tb\":\"stick\",\"_token\":\"hK93a3H6tSyVoPnTdz8rwXkSVX3lro6t4n0CHGQu\"}', '2020-06-20 10:00:08', '2020-06-20 10:00:08');
+INSERT INTO `admin_operation_log` VALUES ('259', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '{\"singular\":\"stick\"}', '2020-06-20 10:00:09', '2020-06-20 10:00:09');
+INSERT INTO `admin_operation_log` VALUES ('260', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2020-06-20 10:00:44', '2020-06-20 10:00:44');
+INSERT INTO `admin_operation_log` VALUES ('261', '1', 'admin/helpers/scaffold/table', 'POST', '127.0.0.1', '{\"db\":\"used\",\"tb\":\"stick\",\"_token\":\"hK93a3H6tSyVoPnTdz8rwXkSVX3lro6t4n0CHGQu\"}', '2020-06-20 10:00:48', '2020-06-20 10:00:48');
+INSERT INTO `admin_operation_log` VALUES ('262', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '{\"singular\":\"stick\"}', '2020-06-20 10:00:48', '2020-06-20 10:00:48');
+INSERT INTO `admin_operation_log` VALUES ('263', '1', 'admin/helpers/scaffold', 'POST', '127.0.0.1', '{\"table_name\":\"stick\",\"exist-table\":\"used|stick\",\"model_name\":\"App\\\\Models\\\\Stick\",\"controller_name\":\"App\\\\Admin\\\\Controllers\\\\StickController\",\"create\":[\"migration\",\"controller\",\"lang\"],\"fields\":[{\"name\":\"endtime\",\"translation\":\"\\u5f00\\u59cb\\u65f6\\u95f4\",\"type\":\"timestamp\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":\"\\u5f00\\u59cb\\u65f6\\u95f4\"},{\"name\":\"starttime\",\"translation\":\"\\u7ed3\\u675f\\u65f6\\u95f4\",\"type\":\"timestamp\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":\"\\u7ed3\\u675f\\u65f6\\u95f4\"},{\"name\":\"price\",\"translation\":\"\\u4ef7\\u683c\",\"type\":\"decimal\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":\"\\u4ef7\\u683c\"},{\"name\":\"pid\",\"translation\":\"\\u5546\\u54c1id\",\"type\":\"integer\",\"nullable\":\"on\",\"key\":null,\"default\":null,\"comment\":\"\\u5546\\u54c1id\"}],\"primary_key\":\"id\",\"_token\":\"hK93a3H6tSyVoPnTdz8rwXkSVX3lro6t4n0CHGQu\"}', '2020-06-20 10:01:15', '2020-06-20 10:01:15');
+INSERT INTO `admin_operation_log` VALUES ('264', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '[]', '2020-06-20 10:01:17', '2020-06-20 10:01:17');
+INSERT INTO `admin_operation_log` VALUES ('265', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:01:21', '2020-06-20 10:01:21');
+INSERT INTO `admin_operation_log` VALUES ('266', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 10:03:10', '2020-06-20 10:03:10');
+INSERT INTO `admin_operation_log` VALUES ('267', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 10:05:03', '2020-06-20 10:05:03');
+INSERT INTO `admin_operation_log` VALUES ('268', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 10:05:05', '2020-06-20 10:05:05');
+INSERT INTO `admin_operation_log` VALUES ('269', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 10:05:06', '2020-06-20 10:05:06');
+INSERT INTO `admin_operation_log` VALUES ('270', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 10:05:34', '2020-06-20 10:05:34');
+INSERT INTO `admin_operation_log` VALUES ('271', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 10:06:58', '2020-06-20 10:06:58');
+INSERT INTO `admin_operation_log` VALUES ('272', '1', 'admin/stick/7', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:07:02', '2020-06-20 10:07:02');
+INSERT INTO `admin_operation_log` VALUES ('273', '1', 'admin/stick/7', 'GET', '127.0.0.1', '[]', '2020-06-20 10:07:11', '2020-06-20 10:07:11');
+INSERT INTO `admin_operation_log` VALUES ('274', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:07:12', '2020-06-20 10:07:12');
+INSERT INTO `admin_operation_log` VALUES ('275', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 10:07:13', '2020-06-20 10:07:13');
+INSERT INTO `admin_operation_log` VALUES ('276', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 10:07:44', '2020-06-20 10:07:44');
+INSERT INTO `admin_operation_log` VALUES ('277', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 10:08:28', '2020-06-20 10:08:28');
+INSERT INTO `admin_operation_log` VALUES ('278', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 10:09:34', '2020-06-20 10:09:34');
+INSERT INTO `admin_operation_log` VALUES ('279', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:09:36', '2020-06-20 10:09:36');
+INSERT INTO `admin_operation_log` VALUES ('280', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:09:50', '2020-06-20 10:09:50');
+INSERT INTO `admin_operation_log` VALUES ('281', '1', 'admin/qrcode/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:09:54', '2020-06-20 10:09:54');
+INSERT INTO `admin_operation_log` VALUES ('282', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:09:57', '2020-06-20 10:09:57');
+INSERT INTO `admin_operation_log` VALUES ('283', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:10:14', '2020-06-20 10:10:14');
+INSERT INTO `admin_operation_log` VALUES ('284', '1', 'admin/product/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:10:18', '2020-06-20 10:10:18');
+INSERT INTO `admin_operation_log` VALUES ('285', '1', 'admin/product/1/edit', 'GET', '127.0.0.1', '[]', '2020-06-20 10:10:23', '2020-06-20 10:10:23');
+INSERT INTO `admin_operation_log` VALUES ('286', '1', 'admin/product/1/edit', 'GET', '127.0.0.1', '[]', '2020-06-20 10:10:24', '2020-06-20 10:10:24');
+INSERT INTO `admin_operation_log` VALUES ('287', '1', 'admin/product/1/edit', 'GET', '127.0.0.1', '[]', '2020-06-20 10:10:33', '2020-06-20 10:10:33');
+INSERT INTO `admin_operation_log` VALUES ('288', '1', 'admin/product/1/edit', 'GET', '127.0.0.1', '[]', '2020-06-20 10:11:11', '2020-06-20 10:11:11');
+INSERT INTO `admin_operation_log` VALUES ('289', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:11:20', '2020-06-20 10:11:20');
+INSERT INTO `admin_operation_log` VALUES ('290', '1', 'admin/product/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:11:26', '2020-06-20 10:11:26');
+INSERT INTO `admin_operation_log` VALUES ('291', '1', 'admin/product/1', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:11:27', '2020-06-20 10:11:27');
+INSERT INTO `admin_operation_log` VALUES ('292', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:11:30', '2020-06-20 10:11:30');
+INSERT INTO `admin_operation_log` VALUES ('293', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:12:51', '2020-06-20 10:12:51');
+INSERT INTO `admin_operation_log` VALUES ('294', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:14:08', '2020-06-20 10:14:08');
+INSERT INTO `admin_operation_log` VALUES ('295', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:14:54', '2020-06-20 10:14:54');
+INSERT INTO `admin_operation_log` VALUES ('296', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:15:17', '2020-06-20 10:15:17');
+INSERT INTO `admin_operation_log` VALUES ('297', '1', 'admin/qrcode/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:15:24', '2020-06-20 10:15:24');
+INSERT INTO `admin_operation_log` VALUES ('298', '1', 'admin/qrcode/1', 'PUT', '127.0.0.1', '{\"text\":\"<p>\\u5927\\u5927\\u58eb\\u5927\\u592b\\u5218<\\/p><h2 class=\\\"shelf-title\\\" style=\\\"box-sizing: border-box; margin: 0px; font-weight: 400; font-size: 30px; color: rgba(27, 31, 35, 0.85); font-family: -apple-system, BlinkMacSystemFont,;\\\" data-mce-style=\\\"box-sizing: border-box; margin: 0px; font-weight: 400; font-size: 30px; color: rgba(27, 31, 35, 0.85); font-family: -apple-system, BlinkMacSystemFont,;\\\">Learn Git and GitHub without any code!<\\/h2><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\">Using the Hello World guide, you\\u2019ll start a branch, write comments, and open a pull request.<\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><br data-mce-bogus=\\\"1\\\"><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space: pre;\\\">\\t\\t<\\/span>{<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"id\\\": 1,<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"user_id\\\": 1,<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"cid\\\": 2,<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"title\\\": \\\"cd111\\\",<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"description\\\": \\\"\\u6d4b\\u8bd5\\u63cf\\u8ff02\\\",<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"image\\\": \\\"[\\\\\\\"images\\\\\\\\\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\\\\\\\"]\\\",<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"price\\\": \\\"0.01\\\",<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"tel\\\": \\\"13257275375\\\",<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"commentnumber\\\": 4,<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"pageview\\\": 12,<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"order\\\": 0,<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"status\\\": 1,<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"created_at\\\": \\\"2020-06-18 18:06:38\\\",<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"updated_at\\\": \\\"2020-06-20 09:41:01\\\",<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space:pre\\\">\\t\\t\\t<\\/span>\\\"sticktime\\\": null,<\\/span><\\/font><\\/p><p class=\\\"shelf-lead\\\" style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\\\" data-mce-style=\\\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\\\"><font color=\\\"rgba(27, 31, 35, 0.701960784313725)\\\"><span style=\\\"font-size: 18px;\\\"><span style=\\\"white-space: pre;\\\">\\t\\t\\t<\\/span>\\\"endsticktime\\\": \\\"2020-07-10 09:41:46\\\",<\\/span><\\/font><\\/p>\",\"_token\":\"hK93a3H6tSyVoPnTdz8rwXkSVX3lro6t4n0CHGQu\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/qrcode\"}', '2020-06-20 10:16:00', '2020-06-20 10:16:00');
+INSERT INTO `admin_operation_log` VALUES ('299', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:16:01', '2020-06-20 10:16:01');
+INSERT INTO `admin_operation_log` VALUES ('300', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:16:47', '2020-06-20 10:16:47');
+INSERT INTO `admin_operation_log` VALUES ('301', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:17:18', '2020-06-20 10:17:18');
+INSERT INTO `admin_operation_log` VALUES ('302', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:20:40', '2020-06-20 10:20:40');
+INSERT INTO `admin_operation_log` VALUES ('303', '1', 'admin/qrcode/1', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:20:49', '2020-06-20 10:20:49');
+INSERT INTO `admin_operation_log` VALUES ('304', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:21:35', '2020-06-20 10:21:35');
+INSERT INTO `admin_operation_log` VALUES ('305', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:21:50', '2020-06-20 10:21:50');
+INSERT INTO `admin_operation_log` VALUES ('306', '1', 'admin/qrcode/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:21:53', '2020-06-20 10:21:53');
+INSERT INTO `admin_operation_log` VALUES ('307', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:22:24', '2020-06-20 10:22:24');
+INSERT INTO `admin_operation_log` VALUES ('308', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:22:43', '2020-06-20 10:22:43');
+INSERT INTO `admin_operation_log` VALUES ('309', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:23:19', '2020-06-20 10:23:19');
+INSERT INTO `admin_operation_log` VALUES ('310', '1', 'admin/qrcode/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:23:21', '2020-06-20 10:23:21');
+INSERT INTO `admin_operation_log` VALUES ('311', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:23:24', '2020-06-20 10:23:24');
+INSERT INTO `admin_operation_log` VALUES ('312', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:26:38', '2020-06-20 10:26:38');
+INSERT INTO `admin_operation_log` VALUES ('313', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:26:47', '2020-06-20 10:26:47');
+INSERT INTO `admin_operation_log` VALUES ('314', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:29:59', '2020-06-20 10:29:59');
+INSERT INTO `admin_operation_log` VALUES ('315', '1', 'admin/qrcode', 'GET', '127.0.0.1', '[]', '2020-06-20 10:30:34', '2020-06-20 10:30:34');
+INSERT INTO `admin_operation_log` VALUES ('316', '1', 'admin/qrcode/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:30:38', '2020-06-20 10:30:38');
+INSERT INTO `admin_operation_log` VALUES ('317', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:30:43', '2020-06-20 10:30:43');
+INSERT INTO `admin_operation_log` VALUES ('318', '1', 'admin/qrcode/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:30:47', '2020-06-20 10:30:47');
+INSERT INTO `admin_operation_log` VALUES ('319', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-06-20 10:30:56', '2020-06-20 10:30:56');
+INSERT INTO `admin_operation_log` VALUES ('320', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:31:21', '2020-06-20 10:31:21');
+INSERT INTO `admin_operation_log` VALUES ('321', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:31:24', '2020-06-20 10:31:24');
+INSERT INTO `admin_operation_log` VALUES ('322', '1', 'admin/cate', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:31:26', '2020-06-20 10:31:26');
+INSERT INTO `admin_operation_log` VALUES ('323', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:31:32', '2020-06-20 10:31:32');
+INSERT INTO `admin_operation_log` VALUES ('324', '1', 'admin/product/2/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:31:38', '2020-06-20 10:31:38');
+INSERT INTO `admin_operation_log` VALUES ('325', '1', 'admin/product/2/edit', 'GET', '127.0.0.1', '[]', '2020-06-20 10:32:15', '2020-06-20 10:32:15');
+INSERT INTO `admin_operation_log` VALUES ('326', '1', 'admin/product/2', 'PUT', '127.0.0.1', '{\"cid\":\"2\",\"title\":\"\\u6d4b\\u8bd5\\u5546\\u54c1\\u4e8c\",\"description\":\"\\u6d4b\\u8bd5\\u63cf\\u8ff02\",\"image\":\"images\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\",\"file-image\":null,\"_file_\":null,\"file\":null,\"price\":\"0.01\",\"tel\":\"13257275375\",\"status\":\"2\",\"_token\":\"hK93a3H6tSyVoPnTdz8rwXkSVX3lro6t4n0CHGQu\",\"_method\":\"PUT\"}', '2020-06-20 10:32:18', '2020-06-20 10:32:18');
+INSERT INTO `admin_operation_log` VALUES ('327', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:32:19', '2020-06-20 10:32:19');
+INSERT INTO `admin_operation_log` VALUES ('328', '1', 'admin/product', 'GET', '127.0.0.1', '[]', '2020-06-20 10:32:20', '2020-06-20 10:32:20');
+INSERT INTO `admin_operation_log` VALUES ('329', '1', 'admin/product/2/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:36:29', '2020-06-20 10:36:29');
+INSERT INTO `admin_operation_log` VALUES ('330', '1', 'admin/product/2', 'PUT', '127.0.0.1', '{\"cid\":\"1\",\"title\":\"\\u6d4b\\u8bd5\\u5546\\u54c1\\u4e8c\",\"description\":\"\\u6d4b\\u8bd5\\u63cf\\u8ff02\",\"image\":\"images\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\",\"file-image\":null,\"_file_\":null,\"file\":null,\"price\":\"0.01\",\"tel\":\"13257275375\",\"status\":\"1\",\"_token\":\"hK93a3H6tSyVoPnTdz8rwXkSVX3lro6t4n0CHGQu\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/used.test\\/admin\\/product\"}', '2020-06-20 10:36:33', '2020-06-20 10:36:33');
+INSERT INTO `admin_operation_log` VALUES ('331', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:36:34', '2020-06-20 10:36:34');
+INSERT INTO `admin_operation_log` VALUES ('332', '1', 'admin/helpers/extensions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:37:42', '2020-06-20 10:37:42');
+INSERT INTO `admin_operation_log` VALUES ('333', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:37:44', '2020-06-20 10:37:44');
+INSERT INTO `admin_operation_log` VALUES ('334', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:37:46', '2020-06-20 10:37:46');
+INSERT INTO `admin_operation_log` VALUES ('335', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:37:48', '2020-06-20 10:37:48');
+INSERT INTO `admin_operation_log` VALUES ('336', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:37:56', '2020-06-20 10:37:56');
+INSERT INTO `admin_operation_log` VALUES ('337', '1', 'admin/qrcode/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:37:58', '2020-06-20 10:37:58');
+INSERT INTO `admin_operation_log` VALUES ('338', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:38:02', '2020-06-20 10:38:02');
+INSERT INTO `admin_operation_log` VALUES ('339', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:38:03', '2020-06-20 10:38:03');
+INSERT INTO `admin_operation_log` VALUES ('340', '1', 'admin/cate', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:38:19', '2020-06-20 10:38:19');
+INSERT INTO `admin_operation_log` VALUES ('341', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:38:24', '2020-06-20 10:38:24');
+INSERT INTO `admin_operation_log` VALUES ('342', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:38:26', '2020-06-20 10:38:26');
+INSERT INTO `admin_operation_log` VALUES ('343', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:38:27', '2020-06-20 10:38:27');
+INSERT INTO `admin_operation_log` VALUES ('344', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:38:32', '2020-06-20 10:38:32');
+INSERT INTO `admin_operation_log` VALUES ('345', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:38:33', '2020-06-20 10:38:33');
+INSERT INTO `admin_operation_log` VALUES ('346', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:38:35', '2020-06-20 10:38:35');
+INSERT INTO `admin_operation_log` VALUES ('347', '1', 'admin/cate', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:41:58', '2020-06-20 10:41:58');
+INSERT INTO `admin_operation_log` VALUES ('348', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:42:05', '2020-06-20 10:42:05');
+INSERT INTO `admin_operation_log` VALUES ('349', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 10:42:06', '2020-06-20 10:42:06');
+INSERT INTO `admin_operation_log` VALUES ('350', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 11:38:00', '2020-06-20 11:38:00');
+INSERT INTO `admin_operation_log` VALUES ('351', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 11:38:01', '2020-06-20 11:38:01');
+INSERT INTO `admin_operation_log` VALUES ('352', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 11:38:02', '2020-06-20 11:38:02');
+INSERT INTO `admin_operation_log` VALUES ('353', '1', 'admin/helpers/extensions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 11:38:05', '2020-06-20 11:38:05');
+INSERT INTO `admin_operation_log` VALUES ('354', '1', 'admin/helpers/scaffold', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 11:38:06', '2020-06-20 11:38:06');
+INSERT INTO `admin_operation_log` VALUES ('355', '1', 'admin/helpers/icons', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 11:38:07', '2020-06-20 11:38:07');
+INSERT INTO `admin_operation_log` VALUES ('356', '1', 'admin/product', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 11:38:08', '2020-06-20 11:38:08');
+INSERT INTO `admin_operation_log` VALUES ('357', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 11:38:11', '2020-06-20 11:38:11');
+INSERT INTO `admin_operation_log` VALUES ('358', '1', 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 11:38:12', '2020-06-20 11:38:12');
+INSERT INTO `admin_operation_log` VALUES ('359', '0', 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2020-06-20 14:06:19', '2020-06-20 14:06:19');
+INSERT INTO `admin_operation_log` VALUES ('360', '0', 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2020-06-20 14:30:51', '2020-06-20 14:30:51');
+INSERT INTO `admin_operation_log` VALUES ('361', '0', 'admin/auth/login', 'POST', '127.0.0.1', '{\"_token\":\"ur7lFXq2p4urK3mMHDfz3Z4pCArhfi1Qe16iBtNA\",\"username\":\"admin\",\"password\":\"adm******\"}', '2020-06-20 14:32:48', '2020-06-20 14:32:48');
+INSERT INTO `admin_operation_log` VALUES ('362', '1', 'admin', 'GET', '127.0.0.1', '[]', '2020-06-20 14:32:49', '2020-06-20 14:32:49');
+INSERT INTO `admin_operation_log` VALUES ('363', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 14:48:14', '2020-06-20 14:48:14');
+INSERT INTO `admin_operation_log` VALUES ('364', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 14:48:19', '2020-06-20 14:48:19');
+INSERT INTO `admin_operation_log` VALUES ('365', '1', 'admin/qrcode/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 14:48:20', '2020-06-20 14:48:20');
+INSERT INTO `admin_operation_log` VALUES ('366', '1', 'admin/qrcode', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 14:48:26', '2020-06-20 14:48:26');
+INSERT INTO `admin_operation_log` VALUES ('367', '1', 'admin/stick', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-06-20 15:16:20', '2020-06-20 15:16:20');
+INSERT INTO `admin_operation_log` VALUES ('368', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 15:16:26', '2020-06-20 15:16:26');
+INSERT INTO `admin_operation_log` VALUES ('369', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 15:16:27', '2020-06-20 15:16:27');
+INSERT INTO `admin_operation_log` VALUES ('370', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 15:16:28', '2020-06-20 15:16:28');
+INSERT INTO `admin_operation_log` VALUES ('371', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 15:17:57', '2020-06-20 15:17:57');
+INSERT INTO `admin_operation_log` VALUES ('372', '1', 'admin/stick', 'GET', '127.0.0.1', '[]', '2020-06-20 15:20:01', '2020-06-20 15:20:01');
 
 -- ----------------------------
 -- Table structure for admin_permissions
@@ -485,7 +604,7 @@ CREATE TABLE `comment` (
   `replytime` datetime DEFAULT NULL COMMENT '//评论时间',
   `content` text COLLATE utf8mb4_unicode_ci COMMENT '//评论内容',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of comment
@@ -500,6 +619,11 @@ INSERT INTO `comment` VALUES ('7', '1', '2', '5', null, '一级评论2');
 INSERT INTO `comment` VALUES ('28', '1', '1', null, '2020-06-19 00:00:00', null);
 INSERT INTO `comment` VALUES ('29', '1', '1', null, '2020-06-19 00:00:00', null);
 INSERT INTO `comment` VALUES ('30', '1', '1', null, '2020-06-19 00:00:00', null);
+INSERT INTO `comment` VALUES ('31', '1', '1', null, '2020-06-20 00:00:00', null);
+INSERT INTO `comment` VALUES ('32', '1', '1', null, '2020-06-20 00:00:00', null);
+INSERT INTO `comment` VALUES ('33', '1', '1', null, '2020-06-20 00:00:00', '123456');
+INSERT INTO `comment` VALUES ('34', '1', '1', null, '2020-06-20 00:00:00', null);
+INSERT INTO `comment` VALUES ('35', '1', '1', null, '2020-06-20 00:00:00', '123456');
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -568,11 +692,12 @@ CREATE TABLE `product` (
   `tel` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '联系方式',
   `commentnumber` int(11) NOT NULL DEFAULT '0',
   `pageview` int(11) NOT NULL DEFAULT '0',
-  `order` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '层级',
+  `order` int(10) DEFAULT '0' COMMENT '层级',
   `status` tinyint(5) NOT NULL DEFAULT '1',
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `sticktime` timestamp NULL DEFAULT NULL COMMENT '置顶时间',
+  `endsticktime` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `cid` (`cid`)
@@ -581,23 +706,24 @@ CREATE TABLE `product` (
 -- ----------------------------
 -- Records of product
 -- ----------------------------
-INSERT INTO `product` VALUES ('1', '1', '2', 'cd111', '测试描述2', '[\"images\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\"]', '0.01', '13257275375', '4', '12', '1', '1', '2020-06-18 18:06:38', '2020-06-19 17:31:36', null);
-INSERT INTO `product` VALUES ('2', '1', '2', '测试商品二', '测试描述2', '[\"images\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\"]', '0.01', '13257275375', '0', '0', '2', '1', '2020-07-10 19:46:00', '2020-06-18 18:06:38', null);
+INSERT INTO `product` VALUES ('1', '1', '2', '测试商品一111', '测试描述2', '[\"images\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\"]', '0.01', '13257275375', '9', '13', '5', '1', '2020-06-18 18:06:38', '2020-06-20 15:17:46', '2020-06-20 15:17:46', '2020-06-21 14:55:49');
+INSERT INTO `product` VALUES ('2', '1', '1', '测试商品二', '测试描述2', '[\"images\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\"]', '0.01', '13257275375', '0', '0', '2', '1', '2020-07-10 19:46:00', '2020-06-20 10:36:33', null, '2020-06-27 09:40:26');
 
 -- ----------------------------
 -- Table structure for qrcode
 -- ----------------------------
 DROP TABLE IF EXISTS `qrcode`;
 CREATE TABLE `qrcode` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `text` text COLLATE utf8mb4_unicode_ci COMMENT '//内容',
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '标题',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of qrcode
 -- ----------------------------
-INSERT INTO `qrcode` VALUES ('1', '<p>大大士大夫刘</p><h2 class=\"shelf-title\" style=\"box-sizing: border-box; margin: 0px; font-weight: 400; font-size: 30px; color: rgba(27, 31, 35, 0.85); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; text-align: center; background-color: rgb(254, 254, 254);\">Learn Git and GitHub without any code!</h2><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; text-align: center; background-color: rgb(254, 254, 254);\">Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.</p>');
+INSERT INTO `qrcode` VALUES ('<p>大大士大夫刘</p><h2 class=\"shelf-title\" style=\"box-sizing: border-box; margin: 0px; font-weight: 400; font-size: 30px; color: rgba(27, 31, 35, 0.85); font-family: -apple-system, BlinkMacSystemFont,;\" data-mce-style=\"box-sizing: border-box; margin: 0px; font-weight: 400; font-size: 30px; color: rgba(27, 31, 35, 0.85); font-family: -apple-system, BlinkMacSystemFont,;\">Learn Git and GitHub without any code!</h2><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\">Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.</p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><br data-mce-bogus=\"1\"></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space: pre;\">		</span>{</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"id\": 1,</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"user_id\": 1,</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"cid\": 2,</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"title\": \"cd111\",</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"description\": \"测试描述2\",</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"image\": \"[\\\"images\\\\/fd13a423216da50a7a7fbc5e4e1334dc.jpg\\\"]\",</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"price\": \"0.01\",</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"tel\": \"13257275375\",</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"commentnumber\": 4,</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"pageview\": 12,</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"order\": 0,</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"status\": 1,</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"created_at\": \"2020-06-18 18:06:38\",</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"updated_at\": \"2020-06-20 09:41:01\",</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space:pre\">			</span>\"sticktime\": null,</span></font></p><p class=\"shelf-lead\" style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px;\" data-mce-style=\"box-sizing: border-box; margin-top: 10px; margin-bottom: 30px; font-size: 18px; color: rgba(27, 31, 35, 0.7); font-family: -apple-system, BlinkMacSystemFont,;\"><font color=\"rgba(27, 31, 35, 0.701960784313725)\"><span style=\"font-size: 18px;\"><span style=\"white-space: pre;\">			</span>\"endsticktime\": \"2020-07-10 09:41:46\",</span></font></p>', '1', '合作请联系二维码');
 
 -- ----------------------------
 -- Table structure for stick
@@ -605,22 +731,21 @@ INSERT INTO `qrcode` VALUES ('1', '<p>大大士大夫刘</p><h2 class=\"shelf-ti
 DROP TABLE IF EXISTS `stick`;
 CREATE TABLE `stick` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '标题',
-  `status` tinyint(10) DEFAULT NULL COMMENT '是否可用',
+  `endtime` timestamp NULL DEFAULT NULL COMMENT '开始时间',
+  `starttime` timestamp NULL DEFAULT NULL COMMENT '结束时间',
   `price` decimal(10,2) DEFAULT NULL COMMENT '价格',
-  `pid` int(11) DEFAULT NULL,
+  `pid` int(11) DEFAULT NULL COMMENT '商品id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of stick
 -- ----------------------------
-INSERT INTO `stick` VALUES ('1', '我要置顶一', '2', '50.00', '1');
-INSERT INTO `stick` VALUES ('2', '我要置顶二', '1', '2.00', null);
-INSERT INTO `stick` VALUES ('3', '我要置顶三', '1', '3.00', null);
-INSERT INTO `stick` VALUES ('4', '我要置顶四', '1', '4.00', null);
-INSERT INTO `stick` VALUES ('5', '我要置顶五', '1', '5.00', null);
-INSERT INTO `stick` VALUES ('6', '我要置顶六', '1', '6.00', null);
+INSERT INTO `stick` VALUES ('7', '2020-06-28 09:40:50', '2020-06-20 09:58:15', '50.00', '1');
+INSERT INTO `stick` VALUES ('8', '2020-06-21 00:00:00', '2020-06-20 14:54:48', '60.00', '1');
+INSERT INTO `stick` VALUES ('9', '2020-06-21 00:00:00', '2020-06-20 14:55:49', '60.00', '1');
+INSERT INTO `stick` VALUES ('10', '2020-06-20 14:55:49', '2020-06-20 15:17:26', '500.00', '1');
+INSERT INTO `stick` VALUES ('11', '2020-06-21 14:55:49', '2020-06-20 15:17:46', '500.00', '1');
 
 -- ----------------------------
 -- Table structure for users
@@ -644,4 +769,4 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'snow雪', 'https://wx.qlogo.cn/mmopen/vi_32/fvSzic2fdNUMgDEXQMSMy4qUHQCCCcyPhyZCaKibRcGFckNYyqicx2mfJiagqjKV0USu8icX9fnibDE9wqb4aMazNseA/132', null, '女', '123456777', 'oUf9a5AT4xPDZy8lJ5Fpskh5gTqE', 'eyJpdiI6IlgyZUErdnFGcDJQUDJ0UElcL0RcLzkwUT09IiwidmFsdWUiOiJ0Y0JLVE15SnZobndlYmxKWWpHdGROV29OQXllSUNYN25CdDhnaUFzV0VrbEdNN0t3UDU0eG9ia3dBajNtYnFsIiwibWFjIjoiNWVjMTJhYmNkZTU4ZTc0ZjIxMTNlYWFkOWYyYTI3YTlhZjQwOGQ3YzZhNDM3NTU0ZGZiZjEwNmE4Njc1ZTdkYiJ9', '2020-06-18 17:27:23', '2020-06-19 19:58:27');
+INSERT INTO `users` VALUES ('1', 'snow雪', 'https://wx.qlogo.cn/mmopen/vi_32/fvSzic2fdNUMgDEXQMSMy4qUHQCCCcyPhyZCaKibRcGFckNYyqicx2mfJiagqjKV0USu8icX9fnibDE9wqb4aMazNseA/132', null, '男', '123456777', 'oUf9a5AT4xPDZy8lJ5Fpskh5gTqE', 'eyJpdiI6IkNIbEJKekVQUzljZzZ5TW03Z1dSNWc9PSIsInZhbHVlIjoiMWhlcTlCUlBqcUVjbnJyWmQ3SCtWR3BjRGMxYmVnNXd0RnF1djEyZytJZ0dlVmVsSWZxemFNXC9pazBLU25CRzciLCJtYWMiOiIzNDY0OTZmMmM0N2Q1N2FkY2YxOWNjOTVkM2U2N2ZiODcxMjlkYjRmYTlkMGJkZTkxOGNhOGY0YzFkMWNhYjA5In0=', '2020-06-18 17:27:23', '2020-06-20 15:03:31');

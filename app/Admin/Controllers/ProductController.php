@@ -39,6 +39,12 @@ class ProductController extends AdminController
 //            $grid->updated_at->sortable();
             // 禁用详情按钮
             $grid->disableViewButton();
+//            $grid->disableDeleteButton();
+//            $grid->disableEditButton();
+            $grid->disableQuickEditButton();
+            //关闭新增按钮
+            $grid->disableCreateButton();
+
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
 
