@@ -2,13 +2,24 @@
 
 namespace App\Models;
 
-
+use Dcat\Admin\Traits\ModelTree;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 class Comment extends Model
 {
-	
+    use ModelTree;
+//    protected $titleColumn = 'name';
+//
+//    protected $orderColumn = 'sort';
+//
+//    protected $parentColumn = 'parent_id';
+
+    // 返回空值即可禁用 order 字段
+    public function getOrderColumn()
+    {
+        return null;
+    }
     protected $table = 'comment';
     public $timestamps = false;
 
@@ -20,6 +31,10 @@ class Comment extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id','id');
+    }
+    public function prodect()
+    {
+        return $this->belongsTo(Product::class,'pid','id');
     }
     public function categories()
     {

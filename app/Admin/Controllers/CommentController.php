@@ -18,17 +18,32 @@ class CommentController extends AdminController
     protected function grid()
     {
         return Grid::make(new Comment(), function (Grid $grid) {
-            $grid->id->sortable();
-            $grid->user_id;
-            $grid->pid;
-            $grid->parent_id;
+//            $grid->title // 开启树状表格功能
+            $grid->model()->with(['user']);
+            $grid->model()->with(['prodect']);
+            $grid->model()->with(['childrenCategories']);
+//            $grid->id->sortable();
+//            $grid->user_id;
+            $grid->column('user.nickname','发布人');
+            $grid->column('prodect.title','商品');
+//            $grid->column('childrenCategories.content','评论');
+//            $grid->pid;
+//            $grid->parent_id;
             $grid->replytime;
-            $grid->content;
-        
+            $grid->content->tree(); ;
+
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
         
             });
+//            $grid->disableDeleteButton();
+            $grid->disableEditButton();
+            $grid->disableQuickEditButton();
+            //关闭新增按钮
+            $grid->disableCreateButton();
+            $grid->disableViewButton();
+//            关闭操作
+//            $grid->disableActions();
         });
     }
 

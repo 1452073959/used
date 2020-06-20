@@ -23,4 +23,6 @@ Route::group([
     $router->resource('qrcode', 'QrcodeController');
     //置顶位管理
     $router->resource('stick', 'StickController');
+    //评论管理
+    $router->resource('comment', 'CommentController');
 });

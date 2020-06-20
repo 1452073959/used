@@ -36,7 +36,7 @@ class ProductController extends Controller
             'content' => request('content'),
             'user_id' => $user['id'],
             'replytime' => date('Y-m-d', time()),
-            'parent_id' => request('parent_id', null),
+            'parent_id' => request('parent_id', 0),
         ]);
 
         return  $this->success($product);
@@ -47,7 +47,9 @@ class ProductController extends Controller
         if(!request('pid')){
             return  $this->failed('商品id不能为空');
         }
-        $comments = Comment::with('childrenCategories','user')->whereNull('parent_id')->where('pid',request('pid'))->get();
+
+        $comments = Comment::with('childrenCategories','user')->where('parent_id',0)->where('pid',request('pid'))->get();
+
         return $comments;
     }
     //我发布的
