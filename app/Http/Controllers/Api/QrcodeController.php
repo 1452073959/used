@@ -13,7 +13,7 @@ class QrcodeController extends Controller
     public function qrcode()
     {
         $data=\App\Models\Qrcode::find(1);
-        $url= url("/qr/{$data->id}");
+        $url= url("/qr");
         $qrcode = new BaconQrCodeGenerator;
         return   $qrcode->size(300)->generate($url);
     }
