@@ -33,5 +33,10 @@ class Product extends Model
     }
 
 
+    public function stick()
+    {
+        return $this->hasMany(Stick::class,'pid','id');
+    }
+
 
 }

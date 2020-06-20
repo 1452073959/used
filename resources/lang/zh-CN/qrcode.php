@@ -1,10 +1,11 @@
 <?php 
 return [
     'labels' => [
-        'Qrcode' => 'Qrcode',
+        'Qrcode' => '合作二维码',
     ],
     'fields' => [
-        'text' => '//内容',
+        'text' => '内容',
+        'title' => '标题',
     ],
     'options' => [
     ],

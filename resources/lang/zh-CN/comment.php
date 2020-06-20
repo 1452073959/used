@@ -1,7 +1,7 @@
 <?php 
 return [
     'labels' => [
-        'Comment' => 'Comment',
+        'Comment' => '评论',
     ],
     'fields' => [
         'user_id' => '用户id',

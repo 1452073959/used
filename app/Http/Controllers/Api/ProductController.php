@@ -100,11 +100,22 @@ class ProductController extends Controller
     //商品列表
     public function  productlist()
     {
+        if( request('cid')){
+            $data=Product::with('user')->where(['status'=>1,'cid'=> request('cid')])->orderBy('order','desc')->get();
+        }else{
+            $data=Product::with('user')->where('status',1)->orderBy('order','desc')->get();
+        }
 
-        $data=Product::with('user')->orderBy('order','desc')->get();
         foreach ($data as $k=>$v)
         {
+            if(strtotime(Carbon::now())>strtotime($v['endsticktime'])) {
+                $v['order'] = 0;
+                $v['sticktime'] = null;
+                $v['endsticktime'] = null;
+                $v->save();
+            }
             $data[$k]['time']=Carbon::parse($v['created_at'])->diffForHumans();
+
         }
         return $this->success($data);
     }
@@ -116,4 +127,5 @@ class ProductController extends Controller
         $product->save();
         return $this->success($product);
     }
+
 }

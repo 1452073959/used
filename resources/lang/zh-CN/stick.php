@@ -1,12 +1,12 @@
 <?php 
 return [
     'labels' => [
-        'Stick' => 'Stick',
+        'Stick' => '置顶订单',
     ],
     'fields' => [
-        'title' => '标题',
-        'status' => '是否可用',
-        'price' => '价格',
+        'price' => '订单金额',
+        'endtime' => '结束时间',
+        'starttime' => '开始时间',
     ],
     'options' => [
     ],

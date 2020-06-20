@@ -18,13 +18,20 @@ class QrcodeController extends AdminController
     protected function grid()
     {
         return Grid::make(new Qrcode(), function (Grid $grid) {
-            $grid->id->sortable();
-            $grid->text;
-        
+            $grid->setActionClass(Grid\Displayers\Actions::class);
+//            $grid->id->sortable();
+            $grid->title;
+//            $grid->text->view('qrcode')->setAttributes(['style' => 'width:50px;height:200px;overflow:hidden;']);;
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
         
             });
+            $grid->disableDeleteButton();
+//            $grid->disableEditButton();
+            $grid->disableQuickEditButton();
+            //关闭新增按钮
+            $grid->disableCreateButton();
+            $grid->disableViewButton();
         });
     }
 
@@ -53,6 +60,10 @@ class QrcodeController extends AdminController
         return Form::make(new Qrcode(), function (Form $form) {
             $form->display('id');
             $form->editor('text','二维码内容')->required();;
+            $form->disableResetButton();
+            $form->disableViewCheck();
+            $form->disableEditingCheck();
+            $form->disableCreatingCheck();
         });
     }
 }

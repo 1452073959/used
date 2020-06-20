@@ -21,7 +21,7 @@ class QrcodeController extends Controller
     public function qr()
     {
         $data=\App\Models\Qrcode::find(1);
-        return view('qrcode', ['data' =>$data]);
+        return view('qrcode', ['model' =>$data]);
     }
 
 }

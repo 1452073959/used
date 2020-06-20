@@ -19,7 +19,7 @@ class Controller extends BaseController
     {
 //      $this->middleware('refresh')->except('wechat');;
 //        $this->middleware('auth:api', ['except' => ['wechat']]);
-        $this->middleware('jwt.auth', ['except' => ['wechat']]);
+        $this->middleware('jwt.auth', ['except' => ['wechat','tokenupdate','productlist','productshow']]);
         $this->user =  auth('api')->user();
     }
 
