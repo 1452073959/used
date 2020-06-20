@@ -11,14 +11,15 @@ class UserController extends Controller
     //获取用户信息
     public function show(Request $request)
     {
-        $user=$request->user() ;
+//        dd($this->user);
+        $user = auth('api')->user();
         return $this->success($user);
     }
     //修改用户信息
     public function updateuser(Request $request)
     {
-        $user=$request->user();
-
+//        $user=$request->user();
+        $user = auth('api')->user();
         $res= $user->update($request->all());
         return $this->success($user);
     }

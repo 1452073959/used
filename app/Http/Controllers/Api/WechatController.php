@@ -43,7 +43,9 @@ class WechatController extends Controller
             $user->weapp_avatar=$data['userInfo']['avatarUrl'];
             $user->save();
         }
-        $token= auth('api')->login($user);
+
+//        $token= auth('api')->login($user);
+        $token =auth('api')->tokenById($user['id']);
         return $this->respondWithToken($token);
 //        return $this->success(['openid'=>$weappOpenid,'token'=>$user['token']]);
     }

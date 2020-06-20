@@ -9,13 +9,18 @@ use App\Http\Controllers\Controller as BaseController;
 use App\Models\User;
 use App\Http\Middleware\RefreshToken;
 use Auth;
+use JWTAuth;
 class Controller extends BaseController
 {
     use Helpers;
     public $user=[];
+    protected $guard = 'api';
     public function __construct(Request $request)
     {
-      $this->middleware('refresh')->except('wechat');;
+//      $this->middleware('refresh')->except('wechat');;
+//        $this->middleware('auth:api', ['except' => ['wechat']]);
+        $this->middleware('jwt.auth', ['except' => ['wechat']]);
+        $this->user =  auth('api')->user();
     }
 
     public function respondWithToken($token)
