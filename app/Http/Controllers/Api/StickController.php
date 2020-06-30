@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Api\Controller;
 use App\Models\Product;
 use App\Models\Stick;
+use App\Models\Stickprice;
 use Illuminate\Http\Request;
 use DB;
 class StickController extends Controller
@@ -32,6 +33,12 @@ class StickController extends Controller
             'endtime' =>$data['endsticktime'],
         ]);
         return $this->success($stick);
+    }
+
+    public function price()
+    {
+        $price=Stickprice::find(1);
+        return  $this->success($price);
     }
 
 }

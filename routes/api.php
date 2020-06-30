@@ -58,4 +58,6 @@ $api->version('v1', [
     $api->get('stick','StickController@stick');
     //添加置顶
     $api->post('addstick','StickController@addstick');
+//    置顶小时价
+    $api->get('stickprice','StickController@price');
 });
