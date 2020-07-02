@@ -60,4 +60,6 @@ $api->version('v1', [
     $api->post('addstick','StickController@addstick');
 //    置顶小时价
     $api->get('stickprice','StickController@price');
+    //支付通知
+    $api->any('notify', 'StickController@notify');
 });

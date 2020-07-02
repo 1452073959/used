@@ -105,18 +105,18 @@ return [
     /*
      * 微信支付
      */
-    // 'payment' => [
-    //     'default' => [
-    //         'sandbox'            => env('WECHAT_PAYMENT_SANDBOX', false),
-    //         'app_id'             => env('WECHAT_PAYMENT_APPID', ''),
-    //         'mch_id'             => env('WECHAT_PAYMENT_MCH_ID', 'your-mch-id'),
-    //         'key'                => env('WECHAT_PAYMENT_KEY', 'key-for-signature'),
-    //         'cert_path'          => env('WECHAT_PAYMENT_CERT_PATH', 'path/to/cert/apiclient_cert.pem'),    // XXX: 绝对路径！！！！
-    //         'key_path'           => env('WECHAT_PAYMENT_KEY_PATH', 'path/to/cert/apiclient_key.pem'),      // XXX: 绝对路径！！！！
-    //         'notify_url'         => 'http://example.com/payments/wechat-notify',                           // 默认支付结果通知地址
-    //     ],
-    //     // ...
-    // ],
+     'payment' => [
+         'default' => [
+             'sandbox'            => env('WECHAT_PAYMENT_SANDBOX', false),
+             'app_id'             => env('WECHAT_PAYMENT_APPID', 'wx5da558002fdd6736'),
+             'mch_id'             => env('WECHAT_PAYMENT_MCH_ID', '1562252601'),
+             'key'                => env('WECHAT_PAYMENT_KEY', 'wyy18814184257188141842571881418'),
+             'cert_path'          => env('WECHAT_PAYMENT_CERT_PATH', 'path/to/cert/apiclient_cert.pem'),    // XXX: 绝对路径！！！！
+             'key_path'           => env('WECHAT_PAYMENT_KEY_PATH', 'path/to/cert/apiclient_key.pem'),      // XXX: 绝对路径！！！！
+             'notify_url'         => 'http://example.com/payments/wechat-notify',                           // 默认支付结果通知地址
+         ],
+         // ...
+     ],
 
     /*
      * 企业微信
