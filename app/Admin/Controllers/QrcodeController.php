@@ -58,7 +58,7 @@ class QrcodeController extends AdminController
     protected function form()
     {
         return Form::make(new Qrcode(), function (Form $form) {
-// 去除整个工具栏内容
+            // 去除整个工具栏内容
             $form->disableHeader();
             $form->display('id');
             $form->editor('text','二维码内容')->required();;
