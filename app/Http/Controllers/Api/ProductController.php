@@ -122,7 +122,7 @@ class ProductController extends Controller
     //商品详情
     public function productshow()
     {
-        $product=Product::find(request('id'));
+        $product=Product::with('user')->find(request('id'));
         $product->pageview++;
         $product->save();
         return $this->success($product);
