@@ -35,7 +35,7 @@ class ProductController extends Controller
         $product->comments()->create([
             'content' => request('content'),
             'user_id' => $user['id'],
-            'replytime' => date('Y-m-d', time()),
+            'replytime' => date('Y-m-d H:i:s',time()),
             'parent_id' => request('parent_id', 0),
         ]);
 
