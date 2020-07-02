@@ -128,50 +128,6 @@ class StickController extends Controller
         dump($value);
         dump($value1);
     }
-
-    public function test()
-    {
-        $message=[
-            "appid" => "wx5da558002fdd6736",
-  "bank_type" => "OTHERS",
-  "cash_fee" => "1",
-  "fee_type" => "CNY",
-  "is_subscribe" => "N",
-  "mch_id" => "1562252601",
-  "nonce_str" => "5efdf6b5f0396",
-  "openid" => "oLZ7u0Frz9g4DmtKM21pqfqclkzM",
-  "out_trade_no" => "20200702230109202805",
-  "result_code" => "SUCCESS",
-  "return_code" => "SUCCESS",
-  "sign" => "96BB193CD89F5D7CACA4D4E8A4467C71",
-  "time_end" => "20200702230250",
-  "total_fee" => "1",
-  "trade_type" => "JSAPI",
-  "transaction_id" => "4200000582202007023278921094",
-        ];
-
-        $order = Stick::where('no', $message['out_trade_no'])->first();
-
-        if (!$order || $order['paid_at']) { // 如果订单不存在 或者 订单已经支付过了
-            return; // 告诉微信，我已经处理完了，订单没找到，别再通知我了
-        }
-        if ($message['return_code'] === 'SUCCESS') { // return_code 表示通信状态，不代表支付状态
-            // 用户是否支付成功
-            $order->status = 2;
-            //更新销量,修改库存;
-            $max = DB::table('product')->max('order');
-            $stick = Product::find($order['pid']);
-            $stick->sticktime = date('Y-m-d H:i:s', time());
-            $stick->endsticktime = $order['endsticktime'];
-            $stick->order = $max + 1;
-            $stick->save();
-
-        } else {
-            $order->status = 1;
-
-        }
-        $order->save();
-
-    }
+    
 
 }
