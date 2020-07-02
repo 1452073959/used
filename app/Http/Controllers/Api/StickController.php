@@ -105,7 +105,7 @@ class StickController extends Controller
                 $order->status = 2;
                 //更新销量,修改库存;
                 $max = DB::table('product')->max('order');
-                $stick = Product::find($order['id']);
+                $stick = Product::find($order['pid']);
                 $stick->sticktime = date('Y-m-d H:i:s', time());
                 $stick->endsticktime = $order['endsticktime'];
                 $stick->order = $max + 1;
@@ -128,5 +128,7 @@ class StickController extends Controller
         dump($value);
         dump($value1);
     }
+
+
 
 }
