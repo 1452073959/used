@@ -62,7 +62,8 @@ $api->version('v1', [
     $api->get('stickprice','StickController@price');
     //支付通知
     $api->any('notify', 'StickController@notify');
-
+    //文件上传
+    Route::post('upload','Api\ProductController@upload');
     $api->any('cache', 'StickController@cache');
     $api->any('test', 'StickController@test');
 });

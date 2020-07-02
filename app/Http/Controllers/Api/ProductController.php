@@ -84,25 +84,17 @@ class ProductController extends Controller
     {
         $user = auth('api')->user();
         $data=$request->all();
-        if ($request->hasFile('image')) {
-            $file=$request->image;
-            foreach ($file as $k=>$v)
-            {
-                $path[] = $v->store('img','admin');
-            }
-            $product=new Product();
-            $product->user_id =$user['id'];
-            $product->cid =$data['cid'];
-            $product->title =$data['title'];
-            $product->description =$data['description'];
-            $product->price =$data['price'];
-            $product->tel =$data['tel'];
-            $product->image =json_encode(array_values($path));
-            $product->save();
-            return $this->success($product);
-        }else{
-            return $this->failed('图片未上传');
-        }
+        $product=new Product();
+        $product->user_id =$user['id'];
+        $product->cid =$data['cid'];
+        $product->title =$data['title'];
+        $product->description =$data['description'];
+        $product->price =$data['price'];
+        $product->tel =$data['tel'];
+        $product->image =json_encode(array_values($data['image']));
+        $product->save();
+        return $this->success($product);
+
     }
 
     //商品列表
@@ -134,6 +126,16 @@ class ProductController extends Controller
         $product->pageview++;
         $product->save();
         return $this->success($product);
+    }
+    //文件上传
+    public function upload(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            $path = $request->image->store('img', 'admin');
+            return $this->success($path);
+        }else{
+            return $this->failed('图片未上传');
+        }
     }
 
 }

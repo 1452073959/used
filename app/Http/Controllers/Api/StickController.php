@@ -60,7 +60,7 @@ class StickController extends Controller
         $payment = \EasyWeChat::payment(); // 微信支付
 
         $result = $payment->order->unify([
-            'body' => '订单标题',
+            'body' => '置顶订单',
             'out_trade_no' => $order['no'],
             'trade_type' => 'JSAPI',  // 必须为JSAPI
             'openid' => $user['weapp_openid'], // 这里的openid为付款人的openid
@@ -122,12 +122,11 @@ class StickController extends Controller
 
     public function cache()
     {
-
         $value = Cache::get('key');
         $value1 = Cache::get('key1');
         dump($value);
         dump($value1);
     }
-    
+
 
 }
