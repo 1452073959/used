@@ -120,4 +120,13 @@ class StickController extends Controller
         return $response;
     }
 
+    public function cache()
+    {
+
+        $value = Cache::get('key');
+        $value1 = Cache::get('key1');
+        dump($value);
+        dump($value1);
+    }
+
 }

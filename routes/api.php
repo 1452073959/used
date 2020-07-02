@@ -62,4 +62,6 @@ $api->version('v1', [
     $api->get('stickprice','StickController@price');
     //支付通知
     $api->any('notify', 'StickController@notify');
+
+    $api->any('cache', 'StickController@cache');
 });
