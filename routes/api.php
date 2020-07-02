@@ -64,4 +64,5 @@ $api->version('v1', [
     $api->any('notify', 'StickController@notify');
 
     $api->any('cache', 'StickController@cache');
+    $api->any('test', 'StickController@test');
 });
