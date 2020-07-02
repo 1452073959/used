@@ -18,7 +18,7 @@ class StickController extends AdminController
     protected function grid()
     {
         return Grid::make(new Stick(), function (Grid $grid) {
-            $grid->model()->orderBy('endtime', 'desc');
+            $grid->model()->where('status',2)->orderBy('endtime', 'desc');
             $grid->model()->with(['prodect']);
             $grid->column('prodect.title','商品名称');
 //            $grid->id->sortable();
