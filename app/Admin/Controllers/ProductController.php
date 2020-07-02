@@ -84,7 +84,7 @@ class ProductController extends AdminController
         return Form::make(new Product(), function (Form $form) {
             $form->display('id');
 //            $form->text('cid');
-            $form->select('cid','所属分类')->options('http://used.test/api/cate');
+            $form->select('cid','所属分类')->options(config('app.url').'/api/cate');
             $form->text('title');
             $form->text('description');
 //            $form->text('image');
