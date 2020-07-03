@@ -91,6 +91,7 @@ class ProductController extends Controller
         $product->description =$data['description'];
         $product->price =$data['price'];
         $product->tel =$data['tel'];
+        $product->school =$data['school'];
         $product->image =json_encode(array_values($data['image']));
         $product->save();
         return $this->success($product);
