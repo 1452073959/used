@@ -16,10 +16,10 @@ class QrcodeController extends Controller
         $data=\App\Models\Qrcode::find(1);
         $url= url("/qr");
         //随机二维码图片名
-        $fileName = 'my' . '.svg';
+        $fileName = 'my' . '.png';
         //二维码图片路径
         $filename=public_path('uploads').'/'.$fileName;
-        QrCode::size(200)->generate($url, $filename);
+        QrCode::format('png')->size(200)->generate($url, $filename);
         return Storage::disk('admin')->url($fileName);
     }
 
