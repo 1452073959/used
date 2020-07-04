@@ -134,7 +134,7 @@ class StickController extends Controller
     {
         $user = auth('api')->user();
 //        dd($user);
-        $mystick=Stick::with('prodect')->where('user_id',$user['id'])->get();
+        $mystick=Stick::with('prodect')->where('user_id',$user['id'])->where('status',2)->get();
         return $this->success($mystick);
     }
 
