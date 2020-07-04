@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use SimpleSoftwareIO\QrCode\BaconQrCodeGenerator;
+use Storage;
 class QrcodeController extends Controller
 {
     //
@@ -14,8 +15,12 @@ class QrcodeController extends Controller
     {
         $data=\App\Models\Qrcode::find(1);
         $url= url("/qr");
-        $qrcode = new BaconQrCodeGenerator;
-        return   $qrcode->size(300)->generate($url);
+        //随机二维码图片名
+        $fileName = 'my' . '.svg';
+        //二维码图片路径
+        $filename=public_path('uploads').'/'.$fileName;
+        QrCode::size(200)->generate($url, $filename);
+        return Storage::disk('admin')->url($fileName);
     }
 
     public function qr()
