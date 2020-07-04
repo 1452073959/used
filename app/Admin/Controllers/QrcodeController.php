@@ -26,6 +26,8 @@ class QrcodeController extends AdminController
                 $filter->equal('id');
         
             });
+            // 禁用
+            $grid->disableBatchActions();
             $grid->disableDeleteButton();
 //            $grid->disableEditButton();
             $grid->disableQuickEditButton();
