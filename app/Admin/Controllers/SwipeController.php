@@ -30,6 +30,8 @@ class SwipeController extends AdminController
             });
             // 禁用详情按钮
             $grid->disableViewButton();
+            // 禁用
+            $grid->disableBatchActions();
             //关闭新增按钮
             $grid->disableCreateButton();
             $grid->disableDeleteButton();
