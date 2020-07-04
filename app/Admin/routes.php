@@ -25,4 +25,6 @@ Route::group([
     $router->resource('stick', 'StickController');
     //评论管理
     $router->resource('comment', 'CommentController');
+    //swope
+    $router->resource('swipe', 'SwipeController');
 });

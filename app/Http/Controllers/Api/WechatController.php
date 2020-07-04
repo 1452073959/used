@@ -9,7 +9,7 @@ use EasyWeChat\Factory;
 use function EasyWeChat\Kernel\Support\generate_sign;
 use Cache;
 use App\Models\User;
-
+use App\Models\Swipe;
 class WechatController extends Controller
 {
     //登陆
@@ -64,6 +64,22 @@ class WechatController extends Controller
         $value1 = Cache::get('key1');
         dump($value);
         dump($value1);
+    }
+    public function image()
+    {
+        $data=Swipe::all();
+        $data2=[];
+        foreach ($data as $k=>$v)
+        {
+            $data2=json_decode($v['img'],true);
+        }
+
+        foreach ($data2 as $k=>$v)
+        {
+            $data3[]=config('app.url') . 'uploads/' .$v;
+        }
+
+        return $this->success($data3);
     }
 
 

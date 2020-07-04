@@ -28,7 +28,7 @@ class Setting extends Form
      */
     public function form()
     {
-        $this->number('price','价格')->required();
+        $this->text('price','价格')->required();
     }
 
     /**
@@ -39,6 +39,7 @@ class Setting extends Form
     public function default()
     {
         $price=Stickprice::find(1);
+//        dd($price);
         return [
             'price'  => $price['price'],
         ];

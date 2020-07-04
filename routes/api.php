@@ -66,6 +66,8 @@ $api->version('v1', [
     $api->any('notify', 'StickController@notify');
     //文件上传
     Route::post('upload','Api\ProductController@upload');
+    //swipe
+    $api->get('image', 'WechatController@image');
     $api->any('cache', 'StickController@cache');
     $api->any('test', 'StickController@test');
 });
