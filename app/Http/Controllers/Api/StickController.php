@@ -56,6 +56,7 @@ class StickController extends Controller
             'price' => $data['price'],
             'starttime' => date('Y-m-d H:i:s', time()),
             'endtime' => $data['endsticktime'],
+            'user_id' => $user['id'],
         ]);
         $payment = \EasyWeChat::payment(); // 微信支付
 
@@ -126,6 +127,15 @@ class StickController extends Controller
         $value1 = Cache::get('key1');
         dump($value);
         dump($value1);
+    }
+
+    //我的置顶
+    public function mystick()
+    {
+        $user = auth('api')->user();
+//        dd($user);
+        $mystick=Stick::with('prodect')->where('user_id',$user['id'])->get();
+        return $this->success($mystick);
     }
 
 

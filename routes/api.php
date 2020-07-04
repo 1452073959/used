@@ -60,6 +60,8 @@ $api->version('v1', [
     $api->post('addstick','StickController@addstick');
 //    置顶小时价
     $api->get('stickprice','StickController@price');
+    //我的置顶
+    Route::get('mystick','Api\StickController@mystick');
     //支付通知
     $api->any('notify', 'StickController@notify');
     //文件上传
