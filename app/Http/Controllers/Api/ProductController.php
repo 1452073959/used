@@ -122,9 +122,9 @@ class ProductController extends Controller
             $where=['status'=>1];
         }
         if( request('cid')){
-            $data=Product::with('user','schooltitle')->where($where)->where('cid',request('cid'))->orderBy('order','desc')->latest()->paginate(15);
+            $data=Product::with('user','schooltitle')->where($where)->where('cid',request('cid'))->orderBy('order','desc')->latest()->get();
         }else{
-            $data=Product::with('user','schooltitle')->where($where)->orderBy('order','desc')->latest()->paginate(15);
+            $data=Product::with('user','schooltitle')->where($where)->orderBy('order','desc')->latest()->get();
         }
 
         foreach ($data as $k=>$v)
