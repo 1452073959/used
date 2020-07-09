@@ -27,4 +27,6 @@ Route::group([
     $router->resource('comment', 'CommentController');
     //swope
     $router->resource('swipe', 'SwipeController');
+    //学校管理
+    $router->resource('school', 'SchoolController');
 });

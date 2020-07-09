@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Cate;
 use App\Models\Comment;
 use App\Models\Product;
+use App\Models\School;
 use App\Models\Stick;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Api\Controller;
@@ -18,6 +19,20 @@ class ProductController extends Controller
         $data= Cate::all();
         return $data;
     }
+    public function schooladmin()
+    {
+        $data= School::all();
+        return $data;
+    }
+
+    //
+    public function school()
+    {
+        $data= School::all()->toArray();
+        $n = array_column($data, 'text', 'id');
+        return $n;
+    }
+
 
     public function test()
     {
@@ -73,11 +88,11 @@ class ProductController extends Controller
        $res= $product->update($request->all());
         return $this->success($product);
     }
-    //删除
-    public function del(Product $product)
+    //上下架
+    public function productstatus(Product $product)
     {
-        $res= $product->delete();
-        return $this->success($res);
+        $res= $product->update(['status'=>request('status')]);
+        return $this->success($product);
     }
     //商品上传
     public function productadd(Product $product,Request $request)
@@ -101,10 +116,15 @@ class ProductController extends Controller
     //商品列表
     public function  productlist()
     {
-        if( request('cid')){
-            $data=Product::with('user')->where(['status'=>1,'cid'=> request('cid')])->orderBy('order','desc')->get();
+        if(request('school')){
+            $where=['status'=>1,'school'=>request('school',request('school'))];
         }else{
-            $data=Product::with('user')->where('status',1)->orderBy('order','desc')->get();
+            $where=['status'=>1];
+        }
+        if( request('cid')){
+            $data=Product::with('user','schooltitle')->where($where)->where('cid',request('cid'))->orderBy('order','desc')->latest()->paginate(15);
+        }else{
+            $data=Product::with('user','schooltitle')->where($where)->orderBy('order','desc')->latest()->paginate(15);
         }
 
         foreach ($data as $k=>$v)
@@ -113,6 +133,7 @@ class ProductController extends Controller
                 $v['order'] = 0;
                 $v['sticktime'] = null;
                 $v['endsticktime'] = null;
+                $v['stickstatus'] = 1;
                 $v->save();
             }
             $data[$k]['time']=Carbon::parse($v['created_at'])->diffForHumans();

@@ -39,14 +39,18 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection price
      * @property Grid\Column|Collection tel
      * @property Grid\Column|Collection status
-     * @property Grid\Column|Collection endtime
      * @property Grid\Column|Collection starttime
+     * @property Grid\Column|Collection endtime
      * @property Grid\Column|Collection pid
+     * @property Grid\Column|Collection user_id
      * @property Grid\Column|Collection parent_id
+     * @property Grid\Column|Collection replytime
+     * @property Grid\Column|Collection content
+     * @property Grid\Column|Collection img
+     * @property Grid\Column|Collection school
      * @property Grid\Column|Collection order
      * @property Grid\Column|Collection icon
      * @property Grid\Column|Collection uri
-     * @property Grid\Column|Collection user_id
      * @property Grid\Column|Collection permission_id
      * @property Grid\Column|Collection menu_id
      * @property Grid\Column|Collection http_method
@@ -54,8 +58,6 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection role_id
      * @property Grid\Column|Collection password
      * @property Grid\Column|Collection remember_token
-     * @property Grid\Column|Collection replytime
-     * @property Grid\Column|Collection content
      * @property Grid\Column|Collection connection
      * @property Grid\Column|Collection queue
      * @property Grid\Column|Collection payload
@@ -67,11 +69,11 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection pageview
      * @property Grid\Column|Collection sticktime
      * @property Grid\Column|Collection endsticktime
+     * @property Grid\Column|Collection no
      * @property Grid\Column|Collection nickname
      * @property Grid\Column|Collection weapp_avatar
      * @property Grid\Column|Collection birthday
      * @property Grid\Column|Collection sex
-     * @property Grid\Column|Collection school
      * @property Grid\Column|Collection weapp_openid
      *
      * @method Grid\Column|Collection id(string $label = null)
@@ -102,14 +104,18 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection price(string $label = null)
      * @method Grid\Column|Collection tel(string $label = null)
      * @method Grid\Column|Collection status(string $label = null)
-     * @method Grid\Column|Collection endtime(string $label = null)
      * @method Grid\Column|Collection starttime(string $label = null)
+     * @method Grid\Column|Collection endtime(string $label = null)
      * @method Grid\Column|Collection pid(string $label = null)
+     * @method Grid\Column|Collection user_id(string $label = null)
      * @method Grid\Column|Collection parent_id(string $label = null)
+     * @method Grid\Column|Collection replytime(string $label = null)
+     * @method Grid\Column|Collection content(string $label = null)
+     * @method Grid\Column|Collection img(string $label = null)
+     * @method Grid\Column|Collection school(string $label = null)
      * @method Grid\Column|Collection order(string $label = null)
      * @method Grid\Column|Collection icon(string $label = null)
      * @method Grid\Column|Collection uri(string $label = null)
-     * @method Grid\Column|Collection user_id(string $label = null)
      * @method Grid\Column|Collection permission_id(string $label = null)
      * @method Grid\Column|Collection menu_id(string $label = null)
      * @method Grid\Column|Collection http_method(string $label = null)
@@ -117,8 +123,6 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection role_id(string $label = null)
      * @method Grid\Column|Collection password(string $label = null)
      * @method Grid\Column|Collection remember_token(string $label = null)
-     * @method Grid\Column|Collection replytime(string $label = null)
-     * @method Grid\Column|Collection content(string $label = null)
      * @method Grid\Column|Collection connection(string $label = null)
      * @method Grid\Column|Collection queue(string $label = null)
      * @method Grid\Column|Collection payload(string $label = null)
@@ -130,11 +134,11 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection pageview(string $label = null)
      * @method Grid\Column|Collection sticktime(string $label = null)
      * @method Grid\Column|Collection endsticktime(string $label = null)
+     * @method Grid\Column|Collection no(string $label = null)
      * @method Grid\Column|Collection nickname(string $label = null)
      * @method Grid\Column|Collection weapp_avatar(string $label = null)
      * @method Grid\Column|Collection birthday(string $label = null)
      * @method Grid\Column|Collection sex(string $label = null)
-     * @method Grid\Column|Collection school(string $label = null)
      * @method Grid\Column|Collection weapp_openid(string $label = null)
      */
     class Grid {}
@@ -170,14 +174,18 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection price
      * @property Show\Field|Collection tel
      * @property Show\Field|Collection status
-     * @property Show\Field|Collection endtime
      * @property Show\Field|Collection starttime
+     * @property Show\Field|Collection endtime
      * @property Show\Field|Collection pid
+     * @property Show\Field|Collection user_id
      * @property Show\Field|Collection parent_id
+     * @property Show\Field|Collection replytime
+     * @property Show\Field|Collection content
+     * @property Show\Field|Collection img
+     * @property Show\Field|Collection school
      * @property Show\Field|Collection order
      * @property Show\Field|Collection icon
      * @property Show\Field|Collection uri
-     * @property Show\Field|Collection user_id
      * @property Show\Field|Collection permission_id
      * @property Show\Field|Collection menu_id
      * @property Show\Field|Collection http_method
@@ -185,8 +193,6 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection role_id
      * @property Show\Field|Collection password
      * @property Show\Field|Collection remember_token
-     * @property Show\Field|Collection replytime
-     * @property Show\Field|Collection content
      * @property Show\Field|Collection connection
      * @property Show\Field|Collection queue
      * @property Show\Field|Collection payload
@@ -198,11 +204,11 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection pageview
      * @property Show\Field|Collection sticktime
      * @property Show\Field|Collection endsticktime
+     * @property Show\Field|Collection no
      * @property Show\Field|Collection nickname
      * @property Show\Field|Collection weapp_avatar
      * @property Show\Field|Collection birthday
      * @property Show\Field|Collection sex
-     * @property Show\Field|Collection school
      * @property Show\Field|Collection weapp_openid
      *
      * @method Show\Field|Collection id(string $label = null)
@@ -233,14 +239,18 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection price(string $label = null)
      * @method Show\Field|Collection tel(string $label = null)
      * @method Show\Field|Collection status(string $label = null)
-     * @method Show\Field|Collection endtime(string $label = null)
      * @method Show\Field|Collection starttime(string $label = null)
+     * @method Show\Field|Collection endtime(string $label = null)
      * @method Show\Field|Collection pid(string $label = null)
+     * @method Show\Field|Collection user_id(string $label = null)
      * @method Show\Field|Collection parent_id(string $label = null)
+     * @method Show\Field|Collection replytime(string $label = null)
+     * @method Show\Field|Collection content(string $label = null)
+     * @method Show\Field|Collection img(string $label = null)
+     * @method Show\Field|Collection school(string $label = null)
      * @method Show\Field|Collection order(string $label = null)
      * @method Show\Field|Collection icon(string $label = null)
      * @method Show\Field|Collection uri(string $label = null)
-     * @method Show\Field|Collection user_id(string $label = null)
      * @method Show\Field|Collection permission_id(string $label = null)
      * @method Show\Field|Collection menu_id(string $label = null)
      * @method Show\Field|Collection http_method(string $label = null)
@@ -248,8 +258,6 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection role_id(string $label = null)
      * @method Show\Field|Collection password(string $label = null)
      * @method Show\Field|Collection remember_token(string $label = null)
-     * @method Show\Field|Collection replytime(string $label = null)
-     * @method Show\Field|Collection content(string $label = null)
      * @method Show\Field|Collection connection(string $label = null)
      * @method Show\Field|Collection queue(string $label = null)
      * @method Show\Field|Collection payload(string $label = null)
@@ -261,11 +269,11 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection pageview(string $label = null)
      * @method Show\Field|Collection sticktime(string $label = null)
      * @method Show\Field|Collection endsticktime(string $label = null)
+     * @method Show\Field|Collection no(string $label = null)
      * @method Show\Field|Collection nickname(string $label = null)
      * @method Show\Field|Collection weapp_avatar(string $label = null)
      * @method Show\Field|Collection birthday(string $label = null)
      * @method Show\Field|Collection sex(string $label = null)
-     * @method Show\Field|Collection school(string $label = null)
      * @method Show\Field|Collection weapp_openid(string $label = null)
      */
     class Show {}

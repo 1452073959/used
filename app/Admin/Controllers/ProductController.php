@@ -21,10 +21,12 @@ class ProductController extends AdminController
         return Grid::make(new Product(), function (Grid $grid) {
             $grid->model()->with(['cate']);
             $grid->model()->with(['user']);
+            $grid->model()->with(['school']);
             $grid->id->sortable();
 //            $grid->cid;
             $grid->column('user.nickname','发布人');
             $grid->column('cate.text','分类');
+            $grid->column('school.text','学校');
             $grid->title;
 //            $grid->description;
             $grid->image->display(function ($pictures) {
@@ -85,6 +87,7 @@ class ProductController extends AdminController
             $form->display('id');
 //            $form->text('cid');
             $form->select('cid','所属分类')->options(config('app.url').'/api/cate');
+//            $form->select('school','所属学校')->options(config('app.url').'/api/schooladmin');
             $form->text('title');
             $form->text('description');
 //            $form->text('image');

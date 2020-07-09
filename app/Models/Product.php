@@ -37,6 +37,10 @@ class Product extends Model
     {
         return $this->hasMany(Stick::class,'pid','id');
     }
-
+//学校关联
+    public function schooltitle()
+    {
+        return $this->belongsTo(School::class,'school','id');
+    }
 
 }

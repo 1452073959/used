@@ -110,9 +110,11 @@ class StickController extends Controller
                 $stick->sticktime = date('Y-m-d H:i:s', time());
                 $stick->endsticktime = $order['endtime'];
                 $stick->order = $max + 1;
+                $stick->stickstatus = 2;
                 $stick->save();
             } else {
                 $order->status = 1;
+
                 return $fail('通信失败，请稍后再通知我');
             }
             $order->save();

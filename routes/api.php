@@ -31,11 +31,12 @@ $api->version('v1', [
         Route::get('myreleaseedit/{product?}','Api\ProductController@myreleaseedit');
         //修改
         Route::any('myreleaseupdate/{product?}','Api\ProductController@myreleaseupdate');
-        //删除
-        Route::get('myreleasedel/{product?}','Api\ProductController@del');
+        //删除(上下架)
+        Route::get('productstatus/{product?}','Api\ProductController@productstatus');
         //评论
         Route::post('comments/{product}','Api\ProductController@comments');
     });
+
     //商品上传
     Route::any('productadd','Api\ProductController@productadd');
     // 登录
@@ -68,6 +69,12 @@ $api->version('v1', [
     Route::post('upload','Api\ProductController@upload');
     //swipe
     $api->get('image', 'WechatController@image');
+    //学校管理
+    $api->get('school', 'ProductController@school');
+    $api->get('schooladmin', 'ProductController@schooladmin');
+
+    //
+    $api->any('ma', 'WechatController@ma');
     $api->any('cache', 'StickController@cache');
     $api->any('test', 'StickController@test');
 });
