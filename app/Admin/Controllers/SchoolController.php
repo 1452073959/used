@@ -18,7 +18,7 @@ class SchoolController extends AdminController
     protected function grid()
     {
         return Grid::make(new School(), function (Grid $grid) {
-            $grid->id->sortable();
+//            $grid->id->sortable();
             $grid->text;
         
             $grid->filter(function (Grid\Filter $filter) {
@@ -28,7 +28,7 @@ class SchoolController extends AdminController
             // 禁用
             $grid->disableBatchActions();
 //            $grid->disableDeleteButton();
-            $grid->disableEditButton();
+//            $grid->disableEditButton();
             $grid->disableQuickEditButton();
             //关闭新增按钮
 //            $grid->disableCreateButton();
@@ -59,8 +59,12 @@ class SchoolController extends AdminController
     protected function form()
     {
         return Form::make(new School(), function (Form $form) {
-            $form->display('id');
+//            $form->display('id');
             $form->text('text');
+            $form->disableResetButton();
+            $form->disableViewCheck();
+            $form->disableEditingCheck();
+            $form->disableCreatingCheck();
         });
     }
 }
