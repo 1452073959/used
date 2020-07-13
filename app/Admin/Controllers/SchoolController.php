@@ -25,6 +25,8 @@ class SchoolController extends AdminController
                 $filter->equal('id');
         
             });
+            // 禁用过滤器按钮
+            $grid->disableFilterButton();
             // 禁用
             $grid->disableBatchActions();
 //            $grid->disableDeleteButton();

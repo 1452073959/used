@@ -29,14 +29,15 @@ class StickController extends AdminController
 //            $grid->pid;
 
             $grid->filter(function (Grid\Filter $filter) {
-                $filter->equal('id');
-        
+
+                $filter->like('prodect.title', '商品名称');
             });
 
             $grid->disableDeleteButton();
             $grid->disableEditButton();
             $grid->disableQuickEditButton();
             //关闭新增按钮
+
             $grid->disableCreateButton();
             $grid->disableViewButton();
             //关闭操作
@@ -79,6 +80,8 @@ class StickController extends AdminController
             $form->disableViewCheck();
             $form->disableEditingCheck();
             $form->disableCreatingCheck();
+            // 去除整个工具栏内容
+            $form->disableHeader();
         });
     }
 }

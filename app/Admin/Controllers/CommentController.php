@@ -36,6 +36,8 @@ class CommentController extends AdminController
                 $filter->equal('id');
         
             });
+            // 禁用过滤器按钮
+            $grid->disableFilterButton();
 //            $grid->disableDeleteButton();
             $grid->disableEditButton();
             $grid->disableQuickEditButton();

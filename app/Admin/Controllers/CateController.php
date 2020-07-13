@@ -20,6 +20,8 @@ class CateController extends AdminController
         return Grid::make(new Cate(), function (Grid $grid) {
             $grid->id->sortable();
             $grid->text;
+            // 禁用过滤器按钮
+            $grid->disableFilterButton();
             $grid->image->image();
             // 禁用详情按钮
             $grid->disableViewButton();

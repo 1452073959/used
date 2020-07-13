@@ -48,8 +48,10 @@ class ProductController extends AdminController
             $grid->disableCreateButton();
 
             $grid->filter(function (Grid\Filter $filter) {
-                $filter->equal('id');
 
+                $filter->like('title', '商品名称');
+                $filter->like('user.nickname', '发布人');
+                $filter->like('schooltitle.text', '学校');
             });
         });
     }
@@ -105,6 +107,8 @@ class ProductController extends AdminController
             $form->disableResetButton();
             $form->disableViewCheck();
             $form->disableEditingCheck();
+            // 去除整个工具栏内容
+            $form->disableHeader();
             $form->disableCreatingCheck();
         });
     }
