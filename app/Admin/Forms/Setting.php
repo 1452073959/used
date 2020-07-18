@@ -19,8 +19,10 @@ class Setting extends Form
     {
         $price=Stickprice::find(1);
         $price->price=$input['price'];
+        $price->appid=$input['appid'];
+        $price->path=$input['path'];
         $price->save();
-        return $this->success('置顶小时价更新成功.', '/');
+        return $this->success('更新成功.', '/');
     }
 
     /**
@@ -29,6 +31,8 @@ class Setting extends Form
     public function form()
     {
         $this->text('price','价格')->required();
+        $this->text('appid','跳转小程序appid')->required();
+        $this->text('path','路径')->help(('小程序路径,不填默认为首页'));
     }
 
     /**
@@ -42,6 +46,8 @@ class Setting extends Form
 //        dd($price);
         return [
             'price'  => $price['price'],
+            'appid'  => $price['appid'],
+            'path'  => $price['path'],
         ];
     }
 }

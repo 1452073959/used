@@ -13,6 +13,7 @@ return [
         'status'=>'状态',
         'user_id'=>'用户昵称',
         'pageview'=>'浏览量',
+        'stickstatus' => '置顶状态',
     ],
     'options' => [
     ],

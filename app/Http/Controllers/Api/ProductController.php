@@ -71,7 +71,7 @@ class ProductController extends Controller
     public function myrelease(Request $request)
     {
         $user = auth('api')->user();
-        $res=  Product::where('user_id',$user['id'])->get();
+        $res=  Product::where('user_id',$user['id'])->orderBy('id','desc')->get();
 //       $res=  Product::where('user_id',1)->get();
         return  $this->success($res);
     }

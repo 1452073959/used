@@ -37,6 +37,8 @@ class ProductController extends AdminController
             $grid->price;
             $grid->tel;
             $grid->status->using([ 1 => '上架',2=>'下架']);
+            $grid->stickstatus->using([ 1 => '否',2=>'是']);
+
 //            $grid->created_at;
 //            $grid->updated_at->sortable();
             // 禁用详情按钮
@@ -99,7 +101,9 @@ class ProductController extends AdminController
             });
             $form->text('price');
             $form->text('tel');
+            $form->datetime('endsticktime','置顶结束时间')->help('为空为未置顶/或已过期');
             $form->radio('status')->options([1 => '上架', 2=> '下架'])->default('1');
+
 
             $form->display('created_at');
             $form->display('updated_at');

@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->title('置顶小时价设置')
+            ->title('置顶小时价及小程序跳转设置')
             ->body(new Card(new Setting()));
     }
 }

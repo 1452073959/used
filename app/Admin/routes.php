@@ -29,4 +29,6 @@ Route::group([
     $router->resource('swipe', 'SwipeController');
     //学校管理
     $router->resource('school', 'SchoolController');
+    //用户管理
+    $router->resource('user', 'UserController');
 });
