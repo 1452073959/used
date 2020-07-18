@@ -21,17 +21,16 @@ class Product extends EloquentRepository
     {
         // 获取待编辑的数据
         $attributes = $form->updates();
+        $id = $form->getKey();
         if($attributes['endsticktime']){
-            $id = $form->getKey();
             $max = DB::table('product')->max('order');
             $attributes['order']=$max + 1;
             $attributes['stickstatus']=2;
             $attributes['sticktime']=date('Y-m-d H:i:s', time());
-            DB::table('product')->where('id',$id)->update($attributes);
         }
         // 获取数据主键值
 
-
+        DB::table('product')->where('id',$id)->update($attributes);
         // 返回成功
         return true;
     }
